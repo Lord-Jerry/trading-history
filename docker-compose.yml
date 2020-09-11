@@ -9,6 +9,10 @@ services:
     hostname: server
     depends_on:
       - db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db
   db:
     image: postgres:10
     hostname: db
