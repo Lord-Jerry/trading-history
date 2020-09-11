@@ -2,14 +2,12 @@ package main
 
 import (
 	"github.com/gofiber/fiber"
+	"github.com/lord-jerry/trading-history/routes"
 )
 
 func main() {
 	app := fiber.New()
-
-	app.Get("/test", func(c *fiber.Ctx) {
-		c.Send("Hello, World!")
-	})
+	routes.Route(app)
 
 	app.Listen(3001)
 }
