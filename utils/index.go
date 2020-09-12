@@ -2,11 +2,18 @@ package utils
 
 import (
 	"github.com/dgrijalva/jwt-go"
+	"github.com/gofiber/fiber"
 	"github.com/lord-jerry/trading-history/models"
 	"golang.org/x/crypto/bcrypt"
 	"log"
 	"time"
 )
+
+type DecodedToken struct {
+	UserID float64
+	Name   string
+	Email  string
+}
 
 func HashPassword(password []byte) string {
 	hash, err := bcrypt.GenerateFromPassword(password, bcrypt.MinCost)
@@ -33,6 +40,7 @@ func ComparePassword(hashedPassword string, password string) bool {
 func EncodeToken(user models.User) string {
 	token := jwt.New(jwt.SigningMethodHS256)
 	claims := token.Claims.(jwt.MapClaims)
+	claims["userId"] = user.ID
 	claims["name"] = user.Name
 	claims["email"] = user.Email
 	claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
@@ -42,4 +50,18 @@ func EncodeToken(user models.User) string {
 	}
 
 	return t
+}
+
+func DecodeToken(c *fiber.Ctx) DecodedToken {
+	user := c.Locals("user").(*jwt.Token)
+	claims := user.Claims.(jwt.MapClaims)
+	name := claims["name"].(string)
+	userID := claims["userId"].(float64)
+	email := claims["email"].(string)
+
+	return DecodedToken{
+		UserID: userID,
+		Name:   name,
+		Email:  email,
+	}
 }

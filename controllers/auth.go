@@ -13,7 +13,7 @@ type ErrorResponse struct {
 	StatusCode int32
 }
 
-type SuccessResponse struct {
+type AuthSuccessResponse struct {
 	Message    string
 	Data       models.User
 	Token      string
@@ -42,7 +42,7 @@ func CreateAccount(c *fiber.Ctx) {
 	db.Create(&user)
 	token := utils.EncodeToken(user)
 
-	c.Status(201).JSON(SuccessResponse{
+	c.Status(201).JSON(AuthSuccessResponse{
 		Message:    "Account created Successfully",
 		Data:       user,
 		Token:      token,
@@ -65,10 +65,10 @@ func Login(c *fiber.Ctx) {
 
 	token := utils.EncodeToken(user)
 
-	c.Status(201).JSON(SuccessResponse{
-		Message:    "Account created Successfully",
+	c.Status(200).JSON(AuthSuccessResponse{
+		Message:    "Logged In Successfully",
 		Data:       user,
 		Token:      token,
-		StatusCode: 201,
+		StatusCode: 200,
 	})
 }

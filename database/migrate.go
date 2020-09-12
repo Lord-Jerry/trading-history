@@ -8,4 +8,5 @@ func Migrate() {
 	db := Init()
 
 	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.Portfolio{})
 }

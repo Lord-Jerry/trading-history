@@ -7,32 +7,31 @@ import (
 	"github.com/lord-jerry/trading-history/utils"
 )
 
-type CreateAccountStruct struct {
-	Name     string `validate:"required,min=3,max=32"`
-	Email    string `validate:"required,email,min=6,max=32"`
-	Password string `validate:"required,min=6,max=50"`
+type CreatePortfolioStruct struct {
+	Name string `validate:"required,min=3,max=32"`
+	Type string `validate:"required,number"`
 }
 
-func errorType(value string) string {
+func perrorType(value string) string {
 	if value == "required" {
 		return value
 	}
+	fmt.Println(value)
 	return "invalid"
 }
-func CreateAccount(c *fiber.Ctx) {
+func CreatePortfolio(c *fiber.Ctx) {
 	var errors []utils.ValidationErrorStruc
 	validate := validator.New()
 
-	user := CreateAccountStruct{
-		Name:     c.FormValue("name"),
-		Email:    c.FormValue("email"),
-		Password: c.FormValue("password"),
+	user := CreatePortfolioStruct{
+		Name: c.FormValue("name"),
+		Type: c.FormValue("type"),
 	}
 
 	err := validate.Struct(user)
 	if err != nil {
 		for _, err := range err.(validator.ValidationErrors) {
-			errorTag := errorType(err.Tag())
+			errorTag := perrorType(err.Tag())
 
 			var element = utils.ValidationErrorStruc{
 				Field: err.Field(),
