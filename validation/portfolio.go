@@ -41,9 +41,9 @@ func CreatePortfolio(c *fiber.Ctx) {
 
 			errors = append(errors, element)
 		}
-		c.Status(400).JSON(&utils.ValidationErrorResponse{
-			Message:    errors,
-			StatusCode: 400,
+		c.Status(400).JSON(fiber.Map{
+			"message":    errors,
+			"statusCode": 400,
 		})
 		return
 	}
