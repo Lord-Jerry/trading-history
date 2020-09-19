@@ -9,5 +9,6 @@ type Portfolio struct {
 	UserID uint
 	Type   string
 	Name   string
+	Amount float64
 	Trade  []Trade
 }

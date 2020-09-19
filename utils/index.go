@@ -6,6 +6,7 @@ import (
 	"github.com/lord-jerry/trading-history/models"
 	"golang.org/x/crypto/bcrypt"
 	"log"
+	"strconv"
 	"time"
 )
 
@@ -64,4 +65,16 @@ func DecodeToken(c *fiber.Ctx) DecodedToken {
 		Name:   name,
 		Email:  email,
 	}
+}
+
+func ParseFloat(digit string) float64 {
+	value, _ := strconv.ParseFloat(digit, 64)
+	return value
+}
+
+func ParseDate(date string) time.Time {
+	layout := "Mon, 01/02/06, 03:04PM"
+	t, _ := time.Parse(layout, date)
+
+	return t
 }

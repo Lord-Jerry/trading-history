@@ -9,4 +9,5 @@ func Migrate() {
 
 	db.AutoMigrate(&models.User{})
 	db.AutoMigrate(&models.Portfolio{})
+	db.AutoMigrate(&models.Trade{})
 }

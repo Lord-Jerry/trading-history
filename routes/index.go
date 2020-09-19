@@ -4,7 +4,6 @@ import (
 	"github.com/gofiber/fiber"
 	jwtware "github.com/gofiber/jwt"
 	"github.com/lord-jerry/trading-history/controllers"
-	"github.com/lord-jerry/trading-history/utils"
 	"github.com/lord-jerry/trading-history/validation"
 )
 
@@ -16,9 +15,9 @@ func Route(app *fiber.App) {
 	app.Use(jwtware.New(jwtware.Config{
 		SigningKey: []byte("secret"),
 		ErrorHandler: func(c *fiber.Ctx, e error) {
-			c.Status(401).JSON(utils.ErrorResponse{
-				Message:    e.Error(),
-				StatusCode: 401,
+			c.Status(401).JSON(fiber.Map{
+				"message":    e.Error(),
+				"statusCode": 401,
 			})
 		},
 	}))
@@ -26,4 +25,8 @@ func Route(app *fiber.App) {
 	app.Get("/api/v1/portfolio/", controllers.GetAllPortfolios)
 	app.Put("/api/v1/portfolio/update/:id", validation.CreatePortfolio, controllers.EditPortfolio)
 	app.Delete("/api/v1/portfolio/delete/:id", controllers.DeletePortfolio)
+
+	app.Post("/api/v1/trade/create", controllers.CreateTrade)
+	app.Put("/api/v1/trade/update", controllers.UpdateTrade)
+	app.Get("/api/v1/trade/", controllers.GetAllTrades)
 }

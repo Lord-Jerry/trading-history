@@ -10,20 +10,10 @@ import (
 
 func CreatePortfolio(c *fiber.Ctx) {
 	db := database.Init()
-	var findUser models.User
 	decodedToken := utils.DecodeToken(c)
 
-	db.Find(&findUser, int(decodedToken.UserID))
-	if findUser.Email == "" {
-		c.Status(404).JSON(fiber.Map{
-			"message":    fmt.Sprintf("User with Id %s, does not exits", string(int(decodedToken.UserID))),
-			"statusCode": 404,
-		})
-		return
-	}
-
 	portfolio := models.Portfolio{
-		UserID: findUser.ID,
+		UserID: uint(decodedToken.UserID),
 		Type:   c.FormValue("type"),
 		Name:   c.FormValue("name"),
 	}
@@ -83,7 +73,7 @@ func DeletePortfolio(c *fiber.Ctx) {
 	db.Find(&portfolio, portfolioID)
 	if portfolio.UserID != uint(decodedToken.UserID) {
 		c.Status(404).JSON(fiber.Map{
-			"message":    fmt.Sprintf("Portfolio with Id %s, does not exits", portfolioID),
+			"message":    fmt.Sprintf("Portfolio with Id %s, does not exits", string(portfolioID)),
 			"statusCode": 404,
 		})
 		return

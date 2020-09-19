@@ -10,6 +10,16 @@ import (
 
 func Init() *gorm.DB {
 
+	if os.Getenv("APP_ENV") == "production" {
+		db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
+
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Println("connected to database successfully")
+		return db
+	}
+
 	var host = "db"
 	user, exist := os.LookupEnv("POSTGRES_USER")
 	if !exist {

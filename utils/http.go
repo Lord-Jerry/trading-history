@@ -5,8 +5,3 @@ type ValidationErrorStruc struct {
 	Error string
 	Value string
 }
-
-type ValidationErrorResponse struct {
-	Message    []ValidationErrorStruc
-	StatusCode int32
-}
