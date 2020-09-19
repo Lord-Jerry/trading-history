@@ -9,6 +9,7 @@ import (
 )
 
 func Init() *gorm.DB {
+	fmt.Println(os.Getenv("APP_ENV"))
 
 	if os.Getenv("APP_ENV") == "production" {
 		db, err := gorm.Open("postgres", os.Getenv("DATABASE_URL"))
