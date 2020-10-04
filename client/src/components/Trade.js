@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from './mini-components/Modal'
 
-const Trade = ({ toggleDropModal }) => {
+
+const Trade = () => {
+  const [hideModal, setHideModal] = useState('hidden')
+  const [dropModal, setDropModal] = useState(false)
+
+  const toggleDropModal = (a) => {
+      dropModal ? setHideModal('hidden') : setHideModal('')
+      setDropModal(!dropModal)
+      console.log('modal', dropModal)
+  }
+
     return (
         <div class="lg:flex lg:items-center lg:justify-between px-6 py-4 border-b">
           <div class="flex items-center flex-wrap min-w-0 text-gray-600">
@@ -29,6 +40,8 @@ const Trade = ({ toggleDropModal }) => {
                 View
               </button>
             </span>
+
+            <Modal hideModal={hideModal} setHideModal={toggleDropModal} />
 
             <span class="ml-3 shadow-sm rounded-md">
               <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">

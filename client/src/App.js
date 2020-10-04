@@ -60,7 +60,6 @@ function PrivateRoute({ isLogin }) {
   let history = useHistory()
   return (
     <>
-    {/* return this.props.history.push("/"); */}
     {/* { !props.auth ? <Route exact path='/' component={Home}/> : <Route component={AllFeed}/> } */}
     { isLogin ? <Route component={Main}/> : history.push("/signin") }
     </>

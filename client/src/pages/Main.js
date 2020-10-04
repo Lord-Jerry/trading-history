@@ -72,7 +72,7 @@ const Main = () => {
                     {/* <DescList /> */}
                     <Pagination ></Pagination>
                 </div>
-                <Modal hideModal={hideModal} setHideModal={toggleDropModal} />
+                {/* <Modal hideModal={hideModal} setHideModal={toggleDropModal} /> */}
             </div>
         </div>
     )
