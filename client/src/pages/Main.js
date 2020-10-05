@@ -2,75 +2,60 @@ import React, { useState } from 'react'
 import { Switch, Route } from "react-router-dom"
 import Dash from './Dash'
 import Trades from './Trades'
+import PortfolioStat from './PortfolioStat'
 import Sidebar from '../components/mini-components/Sidebar'
 
 
 const Main = () => {
-    const [hideModal, setHideModal] = useState('hidden')
-    const [dropModal, setDropModal] = useState(false)
-
-    const toggleDropModal = (a) => {
-        dropModal ? setHideModal('hidden') : setHideModal('')
-        setDropModal(!dropModal)
-        console.log('modal', dropModal)
-    }
     
     return (
+        <>
+          <div class="bg-blue-700 mb-12">
+            <div class="container mx-auto px-4">
+              <div class="flex items-center md:justify-between py-4">
+                <div class="w-1/4 md:hidden">
+                  <svg class="fill-current text-white h-8 w-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16.4 9H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zm0 4H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1zM3.6 7h12.8c.552 0 .6-.447.6-1 0-.553-.048-1-.6-1H3.6c-.552 0-.6.447-.6 1 0 .553.048 1 .6 1z" /></svg>
+                </div>
+                <div class="w-1/2 md:w-auto text-center text-white text-2xl font-medium"> tradelog </div>
+                <div class="w-1/4 md:w-auto md:flex text-right">
+                  <div>
+                    <img class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="" />
+                  </div>
+                  <div class="hidden md:block md:flex md:items-center ml-2">
+                    <span class="text-white text-sm mr-1">Adam Wathan</span>
+                    <div>
+                      <svg class="fill-current text-white h-4 w-4 block opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4.516 7.548c.436-.446 1.043-.481 1.576 0L10 11.295l3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-4.695 4.502-4.695 4.502a1.095 1.095 0 0 1-1.576 0S4.924 9.581 4.516 9.163c-.409-.418-.436-1.17 0-1.615z" /></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         <div className="container my-1 mx-auto flex flex-row sm:space-x-0 md:space-x-10 px-4">
             
             <Sidebar />
             
-            <div className="flex flex-col w-full lg:w-6/8">
-                <h4 className="text-2xl title-font font-medium leading-none text-indigo-700 mb-5">PORTFOLIO 1</h4>
+            
                 
-                <div className="flex flex-col md:flex-row w-full space-y-6 md:space-y-0 space-x-0 md:space-x-10">
-                    <div class="lg:w-1/3 md:w-1/2 w-full flex items-center bg-white border border-gray-200 p-4 rounded-lg">
-                        <span class="w-16 h-16 flex items-center justify-around bg-gray-100 text-indigo-500 tracking-wider rounded-full mr-4">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </span>
-                    <div class="flex-grow">
-                            <h2 class="text-gray-900 title-font font-medium text-3xl">$4,351.00</h2>
-                            <p class="text-gray-500">Portfolio value</p>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/3 md:w-1/2 w-full flex items-center bg-white border border-gray-200 p-4 rounded-lg">
-                        <span class="w-16 h-16 flex items-center justify-around bg-gray-100 text-indigo-500 tracking-wider rounded-full mr-4">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </span>
-                        <div class="flex-grow">
-                            <h2 class="text-gray-900 title-font font-medium text-3xl">55.37%</h2>
-                            <p class="text-gray-500">Portfolio growth</p>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/3 md:w-1/2 w-full flex items-center bg-white border border-gray-200 p-4 rounded-lg">
-                        <span class="w-16 h-16 flex items-center justify-around bg-gray-100 text-indigo-500 tracking-wider rounded-full mr-4">
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                        </span>
-                        <div class="flex-grow">
-                            <h2 class="text-gray-900 title-font font-medium text-3xl">21</h2>
-                            <p class="text-gray-500">Open Trades</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
+                
+                
                 <Switch>
                     
                     <Route exact path="/dash/port-1">
-                        <Trades />
+                        <div className="flex flex-col w-full lg:w-6/8">
+                        <h4 className="text-2xl title-font font-medium leading-none text-indigo-700 mb-5">PORTFOLIO 1</h4>
+                        <PortfolioStat />
+                        <Trades /></div>
                     </Route>
                     <Route exact path="/dash">
-                        <Dash />
+                    
+                        <Dash ><PortfolioStat /></Dash>
                     </Route>
                 </Switch> 
-            </div>
+            
         </div>
+        </>
     )
 }
 
