@@ -19,7 +19,7 @@ const Main = ({children}) => {
   return (
 
     // <div className="mx-auto bg-white w-full h-full  rounded-lg shadow border">
-      <div class="font-sans flex flex-col min-h-screen w-full">
+      <div class="font-sans flex flex-col space-y-10 min-h-screen w-full">
 
         {children}
         <div class="flex-grow container mx-auto">
@@ -28,14 +28,12 @@ const Main = ({children}) => {
               <div class="flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
                 <div class="border-b">
                   <div class="flex justify-between px-6 -mb-px">
-                    <h3 class="text-blue-dark py-4 font-normal text-lg">Your Portfolio</h3>
-                    <div class="flex">
-                      <button type="button" class="appearance-none py-4 text-blue-dark border-b border-blue-dark mr-3">
-                        List
-                                    </button>
-                      <button type="button" class="appearance-none py-4 text-grey-dark border-b border-transparent hover:border-grey-dark">
-                        Chart
-                                    </button>
+                    <h3 class="text-blue-dark py-4 font-normal text-lg">Your Portfolios</h3>
+                    <div class="flex items-center">
+                      <button type="button" class="py-2 px-4 rounded text-white bg-blue-500">
+                        New Portfolio
+                      </button>
+                      
                     </div>
                   </div>
                 </div>
