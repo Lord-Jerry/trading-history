@@ -4,21 +4,18 @@ import Dash from './Dash'
 import Trades from './Trades'
 import PortfolioStat from './PortfolioStat'
 import Sidebar from '../components/mini-components/Sidebar'
+import AuthNavbar from '../components/AuthNavbar'
 
 
 const Main = () => {
     
     return (
         <>
-          
+        <AuthNavbar />
           
         <div className="container my-1 mx-auto flex flex-row sm:space-x-0 md:space-x-10 px-4">
             
             <Sidebar />
-            
-            
-                
-                
                 
                 <Switch>
                     

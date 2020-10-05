@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Switch, Route, Redirect, useLocation, useHistory } from "react-router-dom"
+import PageWrapper from './pages/wrapper/PageWrapper'
 import Navbar from './components/Navbar'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
@@ -24,32 +25,33 @@ function App() {
   }, [])
 
   return (
-    <div className="App font-sans  bg-gray-100 min-h-screen">
+    <div className="App font-sans bg-gray-100 min-h-screen">
       
-      {/* <div className="container h-full my-16 mx-auto flex flex-col lg:flex-row sm:space-x-0 md:space-x-10"> */}
 
         {/* { !isLogin ?  */}
           <Switch>
-            <Route exact path="/pricing">
-              <Pricing />
-            </Route>
-            <Route exact path="/">
-              <Navbar isLogin={isLogin} />
-              <Home>
-                <SignUp setisLogin={setisLogin} />
-              </Home>
-            </Route>
-            <Route exact path="/signin">
-              <Home>
-                <Login setisLogin={setisLogin} />
-              </Home>
-            </Route>
+            <PageWrapper>
+              <Route exact path="/pricing">
+                  <Pricing />
+              </Route>
+              <Route exact path="/">
+                <Home>
+                  <SignUp setisLogin={setisLogin} />
+                </Home>
+              </Route>
+              <Route exact path="/signin">
+                  <Home>
+                    <Login setisLogin={setisLogin} />
+                  </Home>
+              </Route>
+            </PageWrapper>
+
             <PrivateRoute path="/dash" isLogin={isLogin} />
             <PrivateRoute path="/dash/port-1" isLogin={isLogin} />
           </Switch> 
           
           {/* } */}
-      {/* </div> */}
+
       <Footer />
     </div>
   );
