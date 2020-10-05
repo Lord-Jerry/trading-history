@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import Trade from '../components/Trade'
-import Pagination from '../components/mini-components/Pagination'
-import Tabs from '../components/Tabs'
-import Modal from '../components/mini-components/Modal'
+import React, { useState } from 'react'
+import { Switch, Route } from "react-router-dom"
+import Dash from './Dash'
+import Trades from './Trades'
 import Sidebar from '../components/mini-components/Sidebar'
 
 
@@ -61,18 +60,15 @@ const Main = () => {
                     
                 </div>
 
-                <h4 className="text-xl title-font font-medium leading-none text-indigo-700 mt-8 mb-5">TRADES</h4>
-                <div className="mx-auto bg-white w-full h-full  rounded-lg shadow borde">
-                    <Tabs />
-                    <Trade toggleDropModal={toggleDropModal} />
-                    <Trade />
-                    <Trade />
-                    <Trade />
-                    <Trade />
-                    {/* <DescList /> */}
-                    <Pagination ></Pagination>
-                </div>
-                {/* <Modal hideModal={hideModal} setHideModal={toggleDropModal} /> */}
+                <Switch>
+                    
+                    <Route exact path="/dash/port-1">
+                        <Trades />
+                    </Route>
+                    <Route exact path="/dash">
+                        <Dash />
+                    </Route>
+                </Switch> 
             </div>
         </div>
     )

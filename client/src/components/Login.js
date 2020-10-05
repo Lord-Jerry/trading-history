@@ -10,9 +10,9 @@ const Login = ({ setisLogin }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // userLogin()
+        userLogin()
         setisLogin(true)
-        history.push('/user')
+        
     }
 
     // sessionStorage.setItem('token', token);
@@ -20,13 +20,16 @@ const Login = ({ setisLogin }) => {
     // let token = sessionStorage.getItem('token');
 
     const userLogin = async () => {
-        await axios.post('https://trading-history.herokuapp.com/api/v1/login', {
-            email, password
-        })
+        await axios.post(
+            'https://trading-history.herokuapp.com/api/v1/login', 
+            { email, password }, 
+            { headers: { "Content-Type": "application/json" }}
+            )
             .then(res => {
                 console.log(res)
                 setisLogin(true)
                 sessionStorage.setItem('token', res.token);
+                history.push('/user')
             })
             .catch(error => {
                 console.log(error)

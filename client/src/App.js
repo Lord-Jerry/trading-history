@@ -5,11 +5,13 @@ import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Home from './pages/Home'
 import Main from './pages/Main'
+import Dash from './pages/Dash'
+import Trades from './pages/Trades'
 import Pricing from './pages/Pricing'
 
 
 function App() {
-  const [isLogin, setisLogin] = useState(false)
+  const [isLogin, setisLogin] = useState(true)
 
   const isAuth = () => {
     let token = sessionStorage.getItem('token');
@@ -42,9 +44,8 @@ function App() {
                 <Login setisLogin={setisLogin} />
               </Home>
             </Route>
-            <PrivateRoute path="/user" isLogin={isLogin}>
-              <Main />
-            </PrivateRoute>
+            <PrivateRoute path="/dash" isLogin={isLogin} />
+            <PrivateRoute path="/dash/port-1" isLogin={isLogin} />
           </Switch> 
           
           {/* } */}
