@@ -30,22 +30,24 @@ function App() {
 
         {/* { !isLogin ?  */}
           <Switch>
-            <PageWrapper>
-              <Route exact path="/pricing">
-                  <Pricing />
-              </Route>
-              <Route exact path="/">
+            <Route exact path="/pricing">
+              <PageWrapper>
+                <Pricing />
+              </PageWrapper>
+            </Route>
+            <Route exact path="/">
+              <PageWrapper>
+              <Home>
+                <SignUp setisLogin={setisLogin} />
+              </Home></PageWrapper>
+            </Route>
+            <Route exact path="/signin">
+              <PageWrapper>
                 <Home>
-                  <SignUp setisLogin={setisLogin} />
+                  <Login setisLogin={setisLogin} />
                 </Home>
-              </Route>
-              <Route exact path="/signin">
-                  <Home>
-                    <Login setisLogin={setisLogin} />
-                  </Home>
-              </Route>
-            </PageWrapper>
-
+              </PageWrapper>
+            </Route>
             <PrivateRoute path="/dash" isLogin={isLogin} />
             <PrivateRoute path="/dash/port-1" isLogin={isLogin} />
           </Switch> 

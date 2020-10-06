@@ -12,7 +12,7 @@ const AuthNavbar = () => {
         setDrop(!drop)
     }
     return (
-          <div class="bg-blue-700 mb-12">
+          <div class="bg-blue-700 mb-10">
             <div class="container mx-auto px-4">
               <div class="flex items-center md:justify-between py-4">
                 <div class="w-1/4 md:hidden">

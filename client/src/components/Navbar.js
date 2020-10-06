@@ -44,7 +44,7 @@ const Navbar = ({ isLogin }) => {
                     <a href="/pricing" className="text-base leading-6 font-medium  text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                       Pricing
                     </a>
-                    <a href="/user" className="text-base leading-6 font-medium  text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
+                    <a href="/dash" className="text-base leading-6 font-medium  text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                       Dash
                     </a>
                     <a href="/signin" className="whitespace-no-wrap text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900">

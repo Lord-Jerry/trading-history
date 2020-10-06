@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Trade from '../components/Trade'
 import Pagination from '../components/mini-components/Pagination'
 import Tabs from '../components/Tabs'
-import Modal from '../components/mini-components/Modal'
+import PortModal from '../components/mini-components/PortModal'
 import Sidebar from '../components/mini-components/Sidebar'
 
 
@@ -21,7 +21,9 @@ const Main = ({children}) => {
     // <div className="mx-auto bg-white w-full h-full  rounded-lg shadow border">
       <div class="font-sans flex flex-col space-y-10 min-h-screen w-full">
 
+        <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 -mb-5">DASHBOARD</h4>
         {children}
+        
         <div class="flex-grow container mx-auto">
           <div class="flex flex-wrap -mx-4">
             <div class="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
@@ -30,10 +32,10 @@ const Main = ({children}) => {
                   <div class="flex justify-between px-6 -mb-px">
                     <h3 class="text-blue-dark py-4 font-normal text-lg">Your Portfolios</h3>
                     <div class="flex items-center">
-                      <button type="button" class="py-2 px-4 rounded text-white bg-blue-500">
+                      <button type="button" onClick={() => setHideModal('') } class="py-2 px-4 rounded text-white bg-blue-500">
                         New Portfolio
                       </button>
-                      
+                      <PortModal hideModal={hideModal} setHideModal={setHideModal} />
                     </div>
                   </div>
                 </div>
