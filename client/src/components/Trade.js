@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Modal from './mini-components/Modal'
+import Modal from './ViewTrade'
 
 
 const Trade = () => {

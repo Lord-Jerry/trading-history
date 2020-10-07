@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Trade from '../components/Trade'
 import Pagination from '../components/mini-components/Pagination'
 import Tabs from '../components/Tabs'
-import PortModal from '../components/mini-components/PortModal'
+import PortModal from '../components/forms/Portfolio'
 import Sidebar from '../components/mini-components/Sidebar'
 
 
