@@ -1,11 +1,9 @@
 import React, {useState} from 'react'
-import { Link } from "react-router-dom";
 import avatar from '../assets/images/avatar.webp'
 
 const AuthNavbar = () => {
     const [hide, setHide] = useState('hidden')
     const [drop, setDrop] = useState(false)
-    const [mbDrop, setMbDrop] = useState('hidden')
 
     const toggleDrop = () => {
         drop ? setHide('hidden') : setHide('')

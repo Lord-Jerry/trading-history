@@ -1,5 +1,4 @@
 import React from 'react'
-import PageWrapper from "./wrapper/PageWrapper";
 
 const Pricing = () => {
     return (

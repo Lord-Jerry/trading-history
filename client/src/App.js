@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Switch, Route, Redirect, useLocation, useHistory } from "react-router-dom"
+import { Switch, Route, useHistory } from "react-router-dom"
 import PageWrapper from './pages/wrapper/PageWrapper'
-import Navbar from './components/Navbar'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Home from './pages/Home'

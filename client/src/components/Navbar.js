@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { Link } from "react-router-dom";
 import avatar from '../assets/images/avatar.webp'
 
 const Navbar = ({ isLogin }) => {
@@ -12,7 +11,7 @@ const Navbar = ({ isLogin }) => {
         setDrop(!drop)
     }
     return (
-          <div className="relative z-20 bg-gray-100 shadow-md">
+          <div className="relative z-20 bg-gray-100 shado-md">
             <div className="container max-w-7xl mx-auto px-4 sm:px-4">
               <div className="flex justify-between items-center border-gray-100 py-4 md:justify-start md:space-x-10">
                 <div className="lg:w-0 md:flex-1">

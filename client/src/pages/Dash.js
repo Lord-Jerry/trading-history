@@ -1,20 +1,9 @@
 import React, { useState } from 'react';
-import Trade from '../components/Trade'
-import Pagination from '../components/mini-components/Pagination'
-import Tabs from '../components/Tabs'
 import PortModal from '../components/forms/Portfolio'
-import Sidebar from '../components/mini-components/Sidebar'
 
 
 const Main = ({children}) => {
   const [hideModal, setHideModal] = useState('hidden')
-  const [dropModal, setDropModal] = useState(false)
-
-  const toggleDropModal = (a) => {
-    dropModal ? setHideModal('hidden') : setHideModal('')
-    setDropModal(!dropModal)
-    console.log('modal', dropModal)
-  }
 
   return (
 
