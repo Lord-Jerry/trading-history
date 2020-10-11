@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from "react-router-dom"
 import avatar from '../assets/images/avatar.webp'
 
 const AuthNavbar = () => {
@@ -22,7 +23,7 @@ const AuthNavbar = () => {
                   <div>
                     <img class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="" />
                   </div>
-                  <div class="hidden md:block md:flex md:items-center ml-2">
+                  <div class="hidden md:flex md:items-center ml-2">
                     <span class="text-white text-sm mr-1">Adam Wathan</span>
                     <div>
                       <svg class="fill-current text-white h-4 w-4 block opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4.516 7.548c.436-.446 1.043-.481 1.576 0L10 11.295l3.908-3.747c.533-.481 1.141-.446 1.574 0 .436.445.408 1.197 0 1.615-.406.418-4.695 4.502-4.695 4.502a1.095 1.095 0 0 1-1.576 0S4.924 9.581 4.516 9.163c-.409-.418-.436-1.17 0-1.615z" /></svg>
@@ -55,9 +56,9 @@ const AuthNavbar = () => {
                           <div class={`${hide} origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg`}>
                               <div class="rounded-md bg-white shadow-xs">
                               <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                  <a href="/" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Account settings</a>
-                                  <a href="/" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Support</a>
-                                  <a href="/" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">License</a>
+                                  <Link to="/" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Account settings</Link>
+                                  <Link to="/" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Support</Link>
+                                  <Link to="/" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">License</Link>
                                   <form method="POST" action="#">
                                   <button type="submit" class="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">
                                       Sign out
@@ -66,15 +67,15 @@ const AuthNavbar = () => {
                                   <details className="mb-3">
                                       <summary>Portfolios</summary>
                                       <span className="flex flex-col pt-3">
-                                          <a href="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                                          <Link to="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
                                               Portfolio 1
-                                          </a>
-                                          <a href="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                                          </Link>
+                                          <Link to="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
                                               Portfolio 2
-                                          </a>
-                                          <a href="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                                          </Link>
+                                          <Link to="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
                                               Portfolio 3
-                                          </a>
+                                          </Link>
                                       </span>
                                   </details>
                               </div>
