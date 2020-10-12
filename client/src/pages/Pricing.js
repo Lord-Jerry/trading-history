@@ -4,7 +4,7 @@ const Pricing = () => {
     return (
         <>
             {/* <section class=""> */}
-                <div class="container px-5 py-12 mx-auto text-gray-700 body-font overflow-hidden">
+                <div class="container px-5 pt-6 pb-12 mx-auto text-gray-700 body-font overflow-hidden">
                     <div class="flex flex-col text-center w-full mb-20">
                         <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Pricing</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.</p>
@@ -95,6 +95,7 @@ const Pricing = () => {
                         
                         <div class="p-4 xl:w-1/3 md:w-1/2 w-full">
                             <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                            <span class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">COMING SOON</span>
                             <h2 class="text-sm tracking-widest title-font mb-1 font-medium">BUSINESS</h2>
                             <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
                                 <span>$56</span>

@@ -8,8 +8,8 @@ const Modal = ({ hideModal, setHideModal }) => {
                 <div class="bg-gray-50 px-8 pt-6 pb-8">
                     <h4 className="text-1xl title-font font-medium leading-none text-blue-700 text-center">Create Portfolio</h4>
                     <hr className="my-5"></hr>
-                        <div class="-mx-3 md:flex mb-3">
-                            <div class="md:w-full px-3">
+                        <div class="-mx-3 flex mb-3">
+                            <div class="w-full px-3">
                                 <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
                                     Portfolio name
                                 </label>
@@ -17,8 +17,8 @@ const Modal = ({ hideModal, setHideModal }) => {
                                 <p class="hidden text-red-700 text-xs italic">Portfolio name is required</p>
                             </div>
                         </div>
-                        <div class="-mx-3 md:flex mb-6">
-                            <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                        <div class="-mx-3 flex  mb-6">
+                            <div class="w-full md:w-1/2 px-3">
                                 <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-state">
                                     TYPE
                                 </label>
@@ -30,7 +30,7 @@ const Modal = ({ hideModal, setHideModal }) => {
                                     </select>
                                 </div>
                             </div>
-                            <div class="md:w-1/2 px-3">
+                            <div class="w-full md:w-1/2 px-3">
                             <label class="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-zip">
                                 Amount
                             </label>
