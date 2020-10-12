@@ -49,7 +49,8 @@ function App() {
                       <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 mb-5">PORTFOLIO 1</h4>
                       <PortfolioStat />
                       <Trades />
-                  </div></Main>
+                  </div>
+              </Main>
             </PrivateRoute>
           </Switch> 
           

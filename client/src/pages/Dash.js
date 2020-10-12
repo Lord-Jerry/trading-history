@@ -7,7 +7,6 @@ const Main = ({children}) => {
 
   return (
 
-    // <div className="mx-auto bg-white w-full h-full  rounded-lg shadow border">
       <div className="font-sans flex flex-col space-y-10 min-h-screen w-full">
 
         <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 -mb-5">DASHBOARD</h4>
@@ -134,7 +133,6 @@ const Main = ({children}) => {
         </div>
         
       </div>
-    // </div>
   )
 }
 

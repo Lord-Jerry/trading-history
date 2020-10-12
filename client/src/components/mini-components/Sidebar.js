@@ -41,7 +41,7 @@ const Sidebar = () => {
                         </Link>
                     </span>
                 </details>
-                <Link to="/dash/port-1" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
+                <Link to="/dash/port-1" onClick={() => sessionStorage.removeItem('token')} className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
                     Logout
                 </Link>
             </div>

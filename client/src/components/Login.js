@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios"
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import logo from "../assets/images/logo.svg"
 
 const Login = () => {
@@ -76,9 +76,9 @@ const Login = () => {
                     </div>
 
                     <div className="text-sm leading-5">
-                        <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                        <Link to="/dash" onClick={() => sessionStorage.setItem('token', "res.token")} className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                             Forgot your password?
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
