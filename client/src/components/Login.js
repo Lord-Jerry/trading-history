@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import axios from "axios";
+import axios from "axios"
 import { useHistory } from "react-router-dom"
+import logo from "../assets/images/logo.svg"
 
 const Login = ({ setisLogin }) => {
     let history = useHistory()
@@ -38,9 +39,9 @@ const Login = ({ setisLogin }) => {
     }
 
     return (
-        <div class="max-w-md m px-10 py-16 bg-white rounded-lg border-gray-600 shadow-2xl">
+        <div class="max-w-lg mx-auto px-10 py-16 bg-white rounded-lg border-gray-600 shadow-2xl">
             <div>
-                <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
+                <img class="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
                 <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
                     Sign in now
                     </h2>

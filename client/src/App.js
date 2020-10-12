@@ -8,7 +8,6 @@ import Main from './pages/Main'
 import Footer from './components/mini-components/Footer'
 import Pricing from './pages/Pricing'
 
-
 function App() {
   const [isLogin, setisLogin] = useState(true)
 
@@ -42,9 +41,7 @@ function App() {
             </Route>
             <Route exact path="/signin">
               <PageWrapper>
-                <Home>
                   <Login setisLogin={setisLogin} />
-                </Home>
               </PageWrapper>
             </Route>
             <PrivateRoute path="/dash" isLogin={isLogin} />
