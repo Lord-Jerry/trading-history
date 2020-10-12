@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Switch, Route, useHistory } from "react-router-dom"
+import { Switch, Route, useHistory, Redirect } from "react-router-dom"
 import PageWrapper from './pages/wrapper/PageWrapper'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
@@ -10,17 +10,22 @@ import Pricing from './pages/Pricing'
 
 function App() {
   const [isLogin, setisLogin] = useState(true)
+  let token = sessionStorage.getItem('token');
 
   const isAuth = () => {
-    let token = sessionStorage.getItem('token');
+    
     if (token) {
       setisLogin(true)
     }
   }
 
   useEffect(() => {
-    isAuth()
+    // isAuth()
+    // sessionStorage.setItem('token', "res.token")
+    console.log(token)
   }, [])
+
+  // if(token === null) return (<div>Loading...</div>)
 
   return (
     <div className="App font-sans bg-gray-100 min-h-screen">
@@ -56,14 +61,28 @@ function App() {
 }
 
 
-function PrivateRoute({ isLogin }) {
-  // let token = sessionStorage.getItem('token');
-  let history = useHistory()
+function PrivateRoute({ isLogin, children, ...rest }) {
+  let token = sessionStorage.getItem('token');
+  // let history = useHistory()
   return (
-    <>
-    {/* { !props.auth ? <Route exact path='/' component={Home}/> : <Route component={AllFeed}/> } */}
-    { isLogin ? <Route component={Main}/> : history.push("/signin") }
-    </>
+    <Route
+      {...rest}
+      render={({ location }) =>
+        // fakeAuth.isAuthenticated
+        token !== null ? (
+          // children
+          <Route component={Main}/>
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/signin",
+              state: { from: location }
+            }}
+          />
+          // history.push("/signin")
+        )
+      }
+    />
   );
 }
 
