@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { Switch, Route, useHistory, Redirect } from "react-router-dom"
+import React from 'react'
+import { Switch, Route, Redirect } from "react-router-dom"
 import PageWrapper from './pages/wrapper/PageWrapper'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Home from './pages/Home'
 import Main from './pages/Main'
+import Dash from './pages/Dash'
+import Trades from './pages/Trades'
+import PortfolioStat from './pages/PortfolioStat'
 import Footer from './components/mini-components/Footer'
 import Pricing from './pages/Pricing'
 
 function App() {
-  const [isLogin, setisLogin] = useState(true)
-  let token = sessionStorage.getItem('token');
-
-  const isAuth = () => {
-    
-    if (token) {
-      setisLogin(true)
-    }
-  }
-
-  useEffect(() => {
-    // isAuth()
-    // sessionStorage.setItem('token', "res.token")
-    console.log(token)
-  }, [])
-
   // if(token === null) return (<div>Loading...</div>)
 
   return (
@@ -41,16 +28,29 @@ function App() {
             <Route exact path="/">
               <PageWrapper>
               <Home>
-                <SignUp setisLogin={setisLogin} />
+                <SignUp />
               </Home></PageWrapper>
             </Route>
             <Route exact path="/signin">
               <PageWrapper>
-                  <Login setisLogin={setisLogin} />
+                  <Login />
               </PageWrapper>
             </Route>
-            <PrivateRoute path="/dash" isLogin={isLogin} />
-            <PrivateRoute path="/dash/port-1" isLogin={isLogin} />
+            <PrivateRoute path="/dash" >
+              <Main>
+                <Dash >
+                    <PortfolioStat />
+                </Dash>
+              </Main>
+            </PrivateRoute>
+            <PrivateRoute path="/dash/port-1">
+              <Main>
+                  <div className="flex flex-col w-full lg:w-6/8">
+                      <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 mb-5">PORTFOLIO 1</h4>
+                      <PortfolioStat />
+                      <Trades />
+                  </div></Main>
+            </PrivateRoute>
           </Switch> 
           
           {/* } */}
@@ -61,17 +61,15 @@ function App() {
 }
 
 
-function PrivateRoute({ isLogin, children, ...rest }) {
+function PrivateRoute({ children, ...rest }) {
   let token = sessionStorage.getItem('token');
-  // let history = useHistory()
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        // fakeAuth.isAuthenticated
         token !== null ? (
-          // children
-          <Route component={Main}/>
+          children
+          
         ) : (
           <Redirect
             to={{
@@ -79,7 +77,6 @@ function PrivateRoute({ isLogin, children, ...rest }) {
               state: { from: location }
             }}
           />
-          // history.push("/signin")
         )
       }
     />
