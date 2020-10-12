@@ -9,7 +9,6 @@ const Main = ({children}) => {
             <AuthNavbar />
             <div className="container my-1 mx-auto flex flex-row sm:space-x-0 md:space-x-10 px-4">
                 <Sidebar />
-
                 {children}
             </div>
         </>

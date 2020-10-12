@@ -43,7 +43,7 @@ function App() {
                 </Dash>
               </Main>
             </PrivateRoute>
-            <PrivateRoute path="/dash/port-1">
+            <PrivateRoute path="/port-1">
               <Main>
                   <div className="flex flex-col w-full lg:w-6/8">
                       <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 mb-5">PORTFOLIO 1</h4>
