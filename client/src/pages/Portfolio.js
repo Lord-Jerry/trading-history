@@ -1,7 +1,7 @@
 import React from 'react'
 import Main from './wrapper/Main'
 import Trades from '../components/Trades'
-import PortfolioStat from './PortfolioStat'
+import PortfolioStat from '../components/PortfolioStat'
 
 
 const Portfolio = () => {

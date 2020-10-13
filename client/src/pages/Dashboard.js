@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Main from './wrapper/Main'
-import PortfolioStat from './PortfolioStat'
+import PortfolioStat from '../components/PortfolioStat'
 import PortModal from '../components/forms/Portfolio'
 
 
