@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
+import Main from './wrapper/Main'
+import PortfolioStat from './PortfolioStat'
 import PortModal from '../components/forms/Portfolio'
 
 
-const Main = ({children}) => {
+const Dashboard = ({children}) => {
   const [hideModal, setHideModal] = useState('hidden')
 
   return (
-
+    <Main>
       <div className="font-sans flex flex-col space-y-10 min-h-screen w-full">
 
         <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 -mb-5">DASHBOARD</h4>
-        {children}
+        <PortfolioStat />
         
         <div className="flex-grow container mx-auto">
           <div className="flex flex-wrap -mx-4">
@@ -133,7 +135,8 @@ const Main = ({children}) => {
         </div>
         
       </div>
+    </Main>
   )
 }
 
-export default Main
+export default Dashboard

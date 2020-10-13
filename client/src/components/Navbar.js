@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Link } from "react-router-dom"
-import avatar from '../assets/images/avatar.webp'
+// import avatar from '../assets/images/avatar.webp'
 import logo from '../assets/images/logo.svg'
 
 const Navbar = ({ isLogin }) => {

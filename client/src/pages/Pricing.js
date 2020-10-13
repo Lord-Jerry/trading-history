@@ -1,8 +1,9 @@
 import React from 'react'
+import PageWrapper from './wrapper/PageWrapper'
 
 const Pricing = () => {
     return (
-        <>
+        <PageWrapper>
             {/* <section className=""> */}
                 <div className="container px-5 pt-6 pb-12 mx-auto text-gray-700 body-font overflow-hidden">
                     <div className="flex flex-col text-center w-full mb-20">
@@ -148,7 +149,7 @@ const Pricing = () => {
                     </div>
                 </div>
             {/* </section> */}
-        </>
+        </PageWrapper>
     )
 }
 

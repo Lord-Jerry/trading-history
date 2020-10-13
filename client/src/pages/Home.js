@@ -1,10 +1,12 @@
 import React from 'react'
+import PageWrapper from './wrapper/PageWrapper'
+
 import { Link } from "react-router-dom"
 import heroImg from '../assets/images/hero-img.png'
 
 const Home = ({ children }) => {
     return (
-        <>
+        <PageWrapper>
             <div className="flex-auto flex-col  h-full mb-10 lg:mb-0">
                 <main className="max-w-screen-xl sm:mt-12 px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div className="text-center mx-auto lg:mx-0 lg:text-left">
@@ -49,7 +51,7 @@ const Home = ({ children }) => {
             <div className="lg:w-2/5">
                 <img className="w-4/5 mb-3 rounded-md mr-auto" src={heroImg} alt="" />
             </div> 
-        </>
+        </PageWrapper>
         
     )
 }
