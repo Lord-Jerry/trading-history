@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Main from './wrapper/Main'
 import PortfolioStat from '../components/PortfolioStat'
-import PortModal from '../components/forms/Portfolio'
+import PortModal from '../components/modals/forms/Portfolio'
 
 
 const Dashboard = ({children}) => {
