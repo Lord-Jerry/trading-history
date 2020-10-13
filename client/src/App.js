@@ -4,7 +4,7 @@ import PageWrapper from './pages/wrapper/PageWrapper'
 import SignUp from './components/SignUp'
 import Login from './components/Login'
 import Home from './pages/Home'
-import Main from './pages/Main'
+import Main from './pages/wrapper/Main'
 import Dash from './pages/Dash'
 import Trades from './pages/Trades'
 import PortfolioStat from './pages/PortfolioStat'
@@ -70,7 +70,6 @@ function PrivateRoute({ children, ...rest }) {
       render={({ location }) =>
         token !== null ? (
           children
-          
         ) : (
           <Redirect
             to={{

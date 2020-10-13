@@ -1,6 +1,6 @@
 import React from 'react'
-import Sidebar from '../components/mini-components/Sidebar'
-import AuthNavbar from '../components/AuthNavbar'
+import Sidebar from '../../components/mini-components/Sidebar'
+import AuthNavbar from '../../components/AuthNavbar'
 
 
 const Main = ({children}) => {
