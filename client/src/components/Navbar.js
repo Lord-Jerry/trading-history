@@ -1,16 +1,11 @@
 import React, {useState} from 'react'
 import { Link } from "react-router-dom"
 import avatar from '../assets/images/avatar.webp'
+import logo from '../assets/images/logo.svg'
 
 const Navbar = ({ isLogin }) => {
-    const [hide, setHide] = useState('hidden')
-    const [drop, setDrop] = useState(false)
     const [mbDrop, setMbDrop] = useState('hidden')
 
-    const toggleDrop = () => {
-        drop ? setHide('hidden') : setHide('')
-        setDrop(!drop)
-    }
     return (
           <div className="relative z-20 bg-gray-100 shado-md">
             <div className="container max-w-7xl mx-auto px-4 sm:px-4">
@@ -36,8 +31,6 @@ const Navbar = ({ isLogin }) => {
                 </div>
 
                 <div className="hidden md:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
-                  { !isLogin ? 
-                  <>
                     <Link to="/" className="text-base leading-6 font-medium  text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition ease-in-out duration-150">
                       Home
                     </Link>
@@ -55,54 +48,6 @@ const Navbar = ({ isLogin }) => {
                         Sign up
                       </Link>
                     </span>
-                  </>
-                  :
-                  <div className="relative inline-block text-left">
-                          <div>
-                              <span className="hover hover:cursor-pointer " onClick={e => toggleDrop()}>
-                                <img className="h-10 w-10 rounded-full bg-gray-500" src={avatar} alt="" />
-                              </span>
-                          </div>
-
-                          {/* <!--
-                              Dropdown panel, show/hide based on dropdown state.
-
-                              Entering: "transition ease-out duration-100"
-                              From: "transform opacity-0 scale-95"
-                              To: "transform opacity-100 scale-100"
-                              Leaving: "transition ease-in duration-75"
-                              From: "transform opacity-100 scale-100"
-                              To: "transform opacity-0 scale-95"
-                          --> */}
-                          <div className={`${hide} origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg`}>
-                              <div className="rounded-md bg-white shadow-xs">
-                              <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                  <Link to="/" className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Account settings</Link>
-                                  <Link to="/" className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">Support</Link>
-                                  <Link to="/" className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">License</Link>
-                                  <form method="POST" action="#">
-                                  <button type="submit" className="block w-full text-left px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900" role="menuitem">
-                                      Sign out
-                                  </button>
-                                  </form>
-                                  <details className="mb-3">
-                                      <summary>Portfolios</summary>
-                                      <span className="flex flex-col pt-3">
-                                          <Link to="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                                              Portfolio 1
-                                          </Link>
-                                          <Link to="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                                              Portfolio 2
-                                          </Link>
-                                          <Link to="/" className="text-base mb-3 leading-6 font-medium text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900">
-                                              Portfolio 3
-                                          </Link>
-                                      </span>
-                                  </details>
-                              </div>
-                              </div>
-                          </div>
-                    </div>}
                 </div>
               </div>
             </div>
@@ -122,7 +67,7 @@ const Navbar = ({ isLogin }) => {
                   <div className="pt-5 pb-6 px-5 space-y-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <img className="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow" />
+                        <img className="h-8 w-auto" src={logo} alt="Workflow" />
                       </div>
                       <div className="-mr-2">
                         <button type="button" onClick={e => setMbDrop('hidden')} className="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -134,7 +79,7 @@ const Navbar = ({ isLogin }) => {
                     </div>
                     <div>
                       <nav className="grid row-gap-8">
-                        <Link to="/" className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                        <Link to="/" className="px-3 py-2 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                           <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                           </svg>
@@ -142,7 +87,7 @@ const Navbar = ({ isLogin }) => {
                             Analytics
                           </div>
                         </Link>
-                        <Link to="/" className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                        <Link to="/" className="px-3 py-2 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                           <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
                           </svg>
@@ -150,7 +95,7 @@ const Navbar = ({ isLogin }) => {
                             Engagement
                           </div>
                         </Link>
-                        <Link to="/" className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                        <Link to="/" className="px-3 py-2 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                           <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                           </svg>
@@ -158,7 +103,7 @@ const Navbar = ({ isLogin }) => {
                             Security
                           </div>
                         </Link>
-                        <Link to="/" className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                        <Link to="/" className="px-3 py-2 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                           <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                           </svg>
@@ -166,7 +111,7 @@ const Navbar = ({ isLogin }) => {
                             Integrations
                           </div>
                         </Link>
-                        <Link to="/" className="-m-3 p-3 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
+                        <Link to="/" className="px-3 py-2 flex items-center space-x-3 rounded-md hover:bg-gray-50 transition ease-in-out duration-150">
                           <svg className="flex-shrink-0 h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                           </svg>
@@ -186,7 +131,7 @@ const Navbar = ({ isLogin }) => {
                         </Link>
                       </span>
                       <p className="text-center text-base leading-6 font-medium text-gray-500">
-                        Existing customer?
+                        Existing customer?&nbsp;
                         <Link to="/" className="text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                           Sign in
                         </Link>

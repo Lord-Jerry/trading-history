@@ -4,7 +4,7 @@ import avatar from '../../assets/images/avatar.webp'
 
 const Sidebar = () => {
     return (
-        <div className="hidden md:flex flex-col lg:w-64 p-5 bg-white shadow border-gray-500 sm:rounded-lg">
+        <div className="hidden lg:flex max-h-3xl flex-col lg:w-64 p-5 bg-white shadow border-gray-500 sm:rounded-lg">
                 <img className="w-full mb-3 rounded-md bg-gray-500" src={avatar} alt="" />
                 <div className="text-xl mb-1 leading-5 font-medium text-gray-900">
                     Jane Cooper
