@@ -13,7 +13,7 @@ const Trades = () => {
         <div className="flex items-center">
           <button type="button" onClick={() => setHideModal("")}
             className="py-2 px-4 rounded text-white bg-blue-500"
-          > New Portfolio </button>
+          > New Trade </button>
           <CreateTrade hideModal={hideModal} setHideModal={setHideModal} />
         </div>
       </div>
