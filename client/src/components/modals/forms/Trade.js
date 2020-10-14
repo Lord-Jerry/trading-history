@@ -1,5 +1,5 @@
 import React from 'react'
-import ModalWrapper from '../mini-components/ModalWrapper'
+import ModalWrapper from '../ModalWrapper'
 
 const Modal = ({ hideModal, setHideModal }) => {
     return (

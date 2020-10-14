@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
+import Portfolios from './pages/Portfolios'
 import Footer from './components/mini-components/Footer'
 import Pricing from './pages/Pricing'
 
@@ -21,6 +22,9 @@ function App() {
         </PrivateRoute>
         <PrivateRoute path="/port-1">
           <Portfolio />
+        </PrivateRoute>
+        <PrivateRoute path="/ports">
+          <Portfolios />
         </PrivateRoute>
       </Switch>
 
