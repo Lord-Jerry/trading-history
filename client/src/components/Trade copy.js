@@ -6,7 +6,7 @@ const Trade = ({trade}) => {
   const [hideModal, setHideModal] = useState('hidden')
   const [dropModal, setDropModal] = useState(false)
 
-  const toggleDropModal = () => {
+  const toggleDropModal = (a) => {
       dropModal ? setHideModal('hidden') : setHideModal('')
       setDropModal(!dropModal)
       console.log('modal', dropModal)

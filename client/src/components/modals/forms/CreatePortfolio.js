@@ -3,7 +3,7 @@ import ModalWrapper from '../ModalWrapper'
 
 const Modal = ({ hideModal, setHideModal }) => {
     return (
-        <ModalWrapper hideModal={hideModal} >  
+        <ModalWrapper hideModal={ hideModal } >
                 {/* <!-- component --> */}
                 <div className="bg-gray-50 px-8 pt-6 pb-8">
                     <h4 className="text-1xl title-font font-medium leading-none text-blue-700 text-center">Create Portfolio</h4>
@@ -48,7 +48,6 @@ const Modal = ({ hideModal, setHideModal }) => {
                                     Cancel
                                 </button>
                             </div>
-                            
                         </div>
                     </div>
         </ModalWrapper>

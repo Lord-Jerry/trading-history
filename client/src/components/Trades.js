@@ -4,7 +4,7 @@ import Pagination from './mini-components/Pagination'
 import Tabs from './Tabs'
 import CreateTrade from "./modals/forms/CreateTrade"
 
-const Trades = () => {
+const Trades = ({trades}) => {
   const [hideModal, setHideModal] = useState("hidden")
   return (
     <>
@@ -19,11 +19,7 @@ const Trades = () => {
       </div>
       <div className="mx-auto bg-white w-full h-full  rounded-lg shadow borde">
         <Tabs />
-        <Trade />
-        <Trade />
-        <Trade />
-        <Trade />
-        <Trade />
+        {trades.map(trade => <Trade key={trade.tradeId} trade={trade} />)}
         <Pagination ></Pagination>
       </div>
     </>

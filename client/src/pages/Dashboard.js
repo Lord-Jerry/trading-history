@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <Main>
       <div className="font-sans flex flex-col space-y-10 min-h-screen w-full">
-        <h4 className="text-1xl title-font font-medium leading-none text-indigo-700 -mb-5">DASHBOARD</h4>
+        <h4 className="text-xl title-font font-medium leading-none text-indigo-700 -mb-5">DASHBOARD</h4>
         <PortfolioStat />
         <div className="flex-grow container mx-auto">
           <div className="flex flex-wrap -mx-4">

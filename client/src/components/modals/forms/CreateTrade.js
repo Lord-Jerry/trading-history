@@ -6,14 +6,14 @@ const Modal = ({ hideModal, setHideModal }) => {
         <ModalWrapper hideModal={hideModal} >  
                 {/* <!-- component --> */}
                 <div className="bg-gray-50 px-8 pt-6 pb-8">
-                    <h4 className="text-1xl title-font font-medium leading-none text-blue-700 text-center">Create Portfolio</h4>
+                    <h4 className="text-1xl title-font font-medium leading-none text-blue-700 text-center">Create Trade</h4>
                     <hr className="my-5"></hr>
                         <div className="-mx-3 flex mb-3">
                             <div className="w-full px-3">
                                 <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-password">
                                     Portfolio name
                                 </label>
-                                <input required className="appearance-none block w-full bg-grey-lighter text-gray-800 sm:text-sm sm:leading-5 border border-grey-lighter rounded py-2 px-4 mb-3" id="grid-password" type="text" placeholder="Portfolio name" />
+                                <input required className="block w-full bg-grey-lighter text-gray-800 sm:text-sm sm:leading-5 border border-grey-lighter rounded py-2 px-4 mb-3" id="grid-password" type="text" placeholder="Portfolio name" />
                                 <p className="hidden text-red-700 text-xs italic">Portfolio name is required</p>
                             </div>
                         </div>
@@ -39,11 +39,11 @@ const Modal = ({ hideModal, setHideModal }) => {
                         </div>
                         <div className="-mx-3 flex  mb-6">
                             <div className="w-full md:w-1/2 px-3">
-                                <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-state">
+                                <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-state2">
                                     TYPE
                                 </label>
                                 <div className="relative">
-                                    <select required className="form-select block w-full bg-grey-lighter border border-grey-lighter text-gray-800 sm:text-sm sm:leading-5 py-2 pl-4 pr-8 rounded" id="grid-state">
+                                    <select required className="form-select block w-full bg-grey-lighter border border-grey-lighter text-gray-800 sm:text-sm sm:leading-5 py-2 pl-4 pr-8 rounded" id="grid-state2">
                                     <option>Crypto</option>
                                     <option>Stock</option>
                                     <option>Options</option>
@@ -51,10 +51,10 @@ const Modal = ({ hideModal, setHideModal }) => {
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 px-3">
-                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-zip">
+                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-zip2">
                                 Amount
                             </label>
-                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="grid-zip" type="text" placeholder="Initial amount" />
+                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="grid-zip2" type="text" placeholder="Initial amount" />
                             </div>
                         </div>
                         <div className="-mx-3 sm:flex sm:flex-col md:flex-row-reverse mb-2">
