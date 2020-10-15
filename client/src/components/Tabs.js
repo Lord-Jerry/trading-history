@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 
 const Tabs = () => {
     return (
-        <section className="">
-            
             <div className="container mx-auto flex flex-wrap flex-col">
                 {/* <h4 className="text-2xl title-font font-medium leading-none text-indigo-700 mb-5">TRADES</h4> */}
                 <div className="flex w-full border-b text-sm bg-gray-50 pt-2">
@@ -26,7 +24,6 @@ const Tabs = () => {
                     </Link>
                 </div>
             </div>
-            </section>
     )
 }
 

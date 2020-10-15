@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Main from './wrapper/Main'
-import Trade from '../components/Trade'
+import PortfolioRow from '../components/PortfolioRow'
 import Pagination from '../components/mini-components/Pagination'
 import Tabs from '../components/Tabs'
 import CreatePortfolio from "../components/modals/forms/CreatePortfolio"
@@ -21,7 +21,7 @@ const Portfolios = () => {
                 </div>
                 <div className="mx-auto bg-white w-full h-full  rounded-lg shadow borde">
                     <Tabs />
-                    {tradesObject.map(trade => <Trade key={trade.tradeId} trade={trade} />)}
+                    {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
                     <Pagination ></Pagination>
                 </div>
             </div>
@@ -31,23 +31,11 @@ const Portfolios = () => {
 
 export default Portfolios
 
-const tradesObject = [
-    {
-        name: "LITC", tradeId: "1275", portId: "498625E", amountInv: "350 USDT", noOfCoins: "34.78", entryPrice: "10.2 USDT",
-        stopLoss: "", exitPrice: "", percent: "", comment: "", entryDate: "14/10/2020", exitDate: ""
-    },
-    {
-        name: "WTCO", tradeId: "1276", portId: "498625E", amountInv: "150 USDT", noOfCoins: "50.56", entryPrice: "4.28 USDT",
-        stopLoss: "2.78 USDT", exitPrice: "35", percent: "", comment: "Whats on your mind", entryDate: "14/10/2020", exitDate: ""
-    },
-]
-
 const portfoliosObject = [
     {
-        name: "Defi Coins", portId: "498625E", amountInv: "350 USDT", noOfTrades: "34", entryPrice: "10.2 USDT", createDate: "14/10/2020",
+        name: "Defi Coins", portId: "498625E", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
     },
     {
-        name: "WTCO", tradeId: "1276", portId: "498625E", amountInv: "150 USDT", noOfCoins: "50.56", entryPrice: "4.28 USDT",
-        stopLoss: "2.78 USDT", exitPrice: "35", percent: "", comment: "Whats on your mind", entryDate: "14/10/2020", exitDate: ""
+        name: "Defi Coins", portId: "498625F", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
     },
 ]
