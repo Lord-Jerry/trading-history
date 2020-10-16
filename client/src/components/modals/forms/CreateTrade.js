@@ -11,10 +11,10 @@ const Modal = ({ hideModal, setHideModal }) => {
                         <div className="-mx-3 flex mb-3">
                             <div className="w-full px-3">
                                 <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-password">
-                                    Portfolio name
+                                    Coin name
                                 </label>
-                                <input required className="block w-full bg-grey-lighter text-gray-800 sm:text-sm sm:leading-5 border border-grey-lighter rounded py-2 px-4 mb-3" id="grid-password" type="text" placeholder="Portfolio name" />
-                                <p className="hidden text-red-700 text-xs italic">Portfolio name is required</p>
+                                <input required className="block w-full bg-grey-lighter text-gray-800 sm:text-sm sm:leading-5 border border-grey-lighter rounded py-2 px-4 mb-3" id="grid-password" type="text" placeholder="Coin name" />
+                                <p className="hidden text-red-700 text-xs italic">Coin name is required</p>
                             </div>
                         </div>
                         <div className="-mx-3 flex  mb-6">
@@ -31,30 +31,24 @@ const Modal = ({ hideModal, setHideModal }) => {
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2 px-3">
-                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-zip">
-                                Amount
+                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="units-bought">
+                                Units bought
                             </label>
-                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="grid-zip" type="text" placeholder="Initial amount" />
+                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="units-bought" type="text" placeholder="No of units bought" />
                             </div>
                         </div>
                         <div className="-mx-3 flex  mb-6">
-                            <div className="w-full md:w-1/2 px-3">
-                                <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-state2">
-                                    TYPE
-                                </label>
-                                <div className="relative">
-                                    <select required className="form-select block w-full bg-grey-lighter border border-grey-lighter text-gray-800 sm:text-sm sm:leading-5 py-2 pl-4 pr-8 rounded" id="grid-state2">
-                                    <option>Crypto</option>
-                                    <option>Stock</option>
-                                    <option>Options</option>
-                                    </select>
-                                </div>
+                        <div className="w-full md:w-1/2 px-3">
+                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="entry-price">
+                                Entry price
+                            </label>
+                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="entry-price" type="text" placeholder="Entry price" />
                             </div>
                             <div className="w-full md:w-1/2 px-3">
-                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="grid-zip2">
-                                Amount
+                            <label className="block uppercase tracking-wide text-gray-800 text-xs font-bold mb-2" htmlFor="amount">
+                                Amount 
                             </label>
-                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="grid-zip2" type="text" placeholder="Initial amount" />
+                            <input required className="appearance-none block w-full bg-grey-lighter sm:text-sm sm:leading-5 text-gray-800 border border-grey-lighter rounded py-2 px-4" id="amount" type="text" placeholder="Initial amount" />
                             </div>
                         </div>
                         <div className="-mx-3 sm:flex sm:flex-col md:flex-row-reverse mb-2">

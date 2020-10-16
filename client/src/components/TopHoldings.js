@@ -6,21 +6,10 @@ const TopHoldings = () => {
     return (
         <div className="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
             <div className="flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
-                <div className="border-b">
-                    <div className="flex justify-between px-6 -mb-px">
-                        <h3 className="text-blue-dark py-4 font-normal text-lg">
-                            Your Portfolios             </h3>
-                        <div className="flex items-center">
-                            <button
-                                type="button"
-                                onClick={() => setHideModal("")}
-                                className="py-2 px-4 rounded text-white bg-blue-500"
-                            >
-                                New Portfolio
-                            </button>
-                            <PortModal hideModal={hideModal} setHideModal={setHideModal} />
-                        </div>
-                    </div>
+                <div className="border-b flex">
+                    <h3 className="text-blue-dark pl-6 py-4 font-normal text-lg -mb-px">
+                        Top Holdings
+                    </h3>
                 </div>
                 <div className="flex-grow flex px-6 py-6 text-grey-darker items-center border-b -mx-4">
                     <div className="w-2/5 xl:w-1/4 px-4 flex items-center">
@@ -37,13 +26,9 @@ const TopHoldings = () => {
                         </div>
                         <span className="text-lg">Bitcoin</span>
                     </div>
-                    <div className="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                        <div className="bg-indigo-300 h-2 rounded-full flex-grow mr-2"></div>
-                            100%
-                        </div>
                     <div className="flex w-3/5 md:w/12">
                         <div className="w-1/2 px-4">
-                            <div className="text-right">0.0010 BTC</div>
+                            <div className="text-right">0.0010 <span className="hidden md:inline">BTC</span> </div>
                         </div>
                         <div className="w-1/2 px-4">
                             <div className="text-right text-grey">CA$21.28</div>
@@ -65,13 +50,9 @@ const TopHoldings = () => {
                         </div>
                         <span className="text-lg">Litecoin</span>
                     </div>
-                    <div className="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                        <div className="bg-blue-200 h-2 w-2 rounded-full mr-2"></div>
-                            0%
-                        </div>
                     <div className="flex w-3/5 md:w/12">
                         <div className="w-1/2 px-4">
-                            <div className="text-right">0.0000 LTC</div>
+                            <div className="text-right">0.0000 <span className="hidden md:inline">LTC</span></div>
                         </div>
                         <div className="w-1/2 px-4">
                             <div className="text-right text-grey">CA$0.00</div>
@@ -93,13 +74,9 @@ const TopHoldings = () => {
                         </div>
                         <span className="text-lg">Ethereum</span>
                     </div>
-                    <div className="hidden md:flex lg:hidden xl:flex w-1/4 px-4 items-center">
-                        <div className="bg-indigo-200 h-2 w-2 rounded-full mr-2"></div>
-                            0%
-                        </div>
                     <div className="flex w-3/5 md:w/12">
                         <div className="w-1/2 px-4">
-                            <div className="text-right">0.0000 ETH</div>
+                            <div className="text-right">0.0000 <span className="hidden md:inline">ETH</span></div>
                         </div>
                         <div className="w-1/2 px-4">
                             <div className="text-right text-grey">CA$0.00</div>

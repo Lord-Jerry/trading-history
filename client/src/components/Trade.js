@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Modal from './modals/ViewTrade'
+import ViewTrade from './modals/ViewTrade'
 
 
 const Trade = ({trade}) => {
@@ -41,7 +41,7 @@ const Trade = ({trade}) => {
               </button>
             </span>
 
-            <Modal hideModal={hideModal} setHideModal={toggleDropModal} />
+            <ViewTrade hideModal={hideModal} trade={trade} tradeStatus={tradeStatus} tradeStatusText={tradeStatusText} setHideModal={toggleDropModal} />
 
             <span className="ml-3 shadow-sm rounded-md">
               <button type="button" className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out">

@@ -1,29 +1,27 @@
 import React from 'react'
 import ModalWrapper from './ModalWrapper'
 
-const Modal = ({ hideModal, setHideModal }) => {
+const Modal = ({ hideModal, setHideModal, trade, tradeStatus, tradeStatusText }) => {
     return (
         <ModalWrapper hideModal={hideModal} >                    
-                    <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div className="flex flex-col">
+                    <div className="w-full bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div className="w-full flex flex-col items-center">
                             
-                            <div className="mt-3 mx-auto flex items-center sm:mt-0">
-                                <div className="flex-shrink-0 flex items-center justify-center mr-3 h-12 w-12 rounded-full bg-red-100">
-                                    {/* <!-- Heroicon name: exclamation --> */}
-                                    <svg className="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                    </svg>
+                        {/* <div className="flex items-center flex-wrap min-w-0 text-gray-600"> */}
+                            <span href="/" className="px-2 py-1 text-xl flex items-center justify-around font-bold leading-7 rounded w-24 bg-gray-100 text-indigo-700 sm:leading-9 sm:truncate">
+                            {trade.name}
+                            </span>
+                            
+                            <div className="sm:mt-5  md:mt-0 flex flex-col lg:flex-row flex-wrap items-cente space-x-0 md:space-x-8 space-y-2 md:space-y-0">
+                                <div className="text-sm leading-5 text-gray-500 flex-no-wrap">Entry Price: <span className="ml-4 text-gray-900">{trade.entryPrice}</span> </div>
+                                <div className="text-sm leading-5 text-gray-500"><span className="text-gray-900">{trade.noOfCoins}</span> Units</div>
+                                <div className={`text-xs leading-5 font-semibold text-${tradeStatus}-800`}>
+                                    <span className={`px-2 py-1 bg-${tradeStatus}-100 rounded-lg`}>{tradeStatusText}</span> 
                                 </div>
-                                <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
-                                    Deactivate account
-                                </h3>
-                                
                             </div>
-                            <div className="mt-2">
-                                <p className="text-sm leading-5 text-gray-500">
-                                    Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.
-                                </p>
-                                </div>
+                            
+                        {/* </div> */}
+
                         </div>
                     </div>
                     <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
