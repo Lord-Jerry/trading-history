@@ -8,6 +8,8 @@ import CreateTrade from "../components/modals/forms/CreateTrade"
 
 const Portfolio = () => {
     const [hideModal, setHideModal] = useState("hidden")
+    const [activeTab, setactiveTab] = useState("open")
+
     return (
         <Main>
             <div className="flex flex-col w-full lg:w-6/8">
@@ -23,8 +25,9 @@ const Portfolio = () => {
                     </div>
                 </div>
                 <div className="flex flex-col bg-white w-full h-full rounded-lg shadow borde">
-                    <Tabs />
-                    {tradesObject.map(trade => <Trade key={trade.tradeId} trade={trade} />)}
+                    <Tabs activeTab={activeTab} handleActiveTab={setactiveTab} />
+                        {tradesObject.filter(trade => activeTab === "open" ? trade.exitPrice === "" : trade.exitPrice !== "")
+                            .map(trade => <Trade key={trade.tradeId} trade={trade} />)}
                     <Pagination ></Pagination>
                 </div>
             </div>

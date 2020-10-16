@@ -22,6 +22,8 @@ const Portfolios = () => {
                 <div className="mx-auto bg-white w-full h-full  rounded-lg shadow borde">
                     <Tabs />
                     {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
+                    {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
+                    {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
                     <Pagination ></Pagination>
                 </div>
             </div>

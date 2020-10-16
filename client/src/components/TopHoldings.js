@@ -1,8 +1,6 @@
-import React, { useState } from "react"
-import PortModal from "./modals/forms/CreatePortfolio"
+import React from "react"
 
 const TopHoldings = () => {
-    const [hideModal, setHideModal] = useState("hidden")
     return (
         <div className="w-full mb-6 lg:mb-0 lg:w-1/2 px-4 flex flex-col">
             <div className="flex-grow flex flex-col bg-white border-t border-b sm:rounded sm:border shadow overflow-hidden">
