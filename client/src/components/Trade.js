@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ViewTrade from './modals/ViewTrade'
 
-
 const Trade = ({trade}) => {
   const [hideModal, setHideModal] = useState('hidden')
   const [dropModal, setDropModal] = useState(false)
@@ -15,7 +14,7 @@ const Trade = ({trade}) => {
   const tradeStatusText = trade.exitPrice === "" ? "open" : "closed"
 
     return (
-        <div className="lg:flex lg:items-center lg:justify-between px-6 py-4 border-b">
+        <div className="lg:flex lg:items-center lg:justify-between px-6 py-4 bg-white border-b">
           <div className="flex items-center flex-wrap min-w-0 text-gray-600">
             <a href="/" className="mr-5 text-xl flex items-center justify-around font-bold leading-7 rounded w-24 bg-gray-100 text-indigo-700 sm:leading-9 sm:truncate">
               <span className="px-2 py-1">{trade.name}</span> 
