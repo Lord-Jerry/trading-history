@@ -7,20 +7,20 @@ const Modal = ({ hideModal, setHideModal, trade, tradeStatus, tradeStatusText })
                     <div className="w-full bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div className="w-full flex flex-col items-center">
                             
-                        {/* <div className="flex items-center flex-wrap min-w-0 text-gray-600"> */}
+                        <div className="flex flex-col items-center flex-wrap min-w-md text-gray-600">
                             <span href="/" className="px-2 py-1 text-xl flex items-center justify-around font-bold leading-7 rounded w-24 bg-gray-100 text-indigo-700 sm:leading-9 sm:truncate">
                             {trade.name}
                             </span>
                             
-                            <div className="sm:mt-5  md:mt-0 flex flex-col lg:flex-row flex-wrap items-cente space-x-0 md:space-x-8 space-y-2 md:space-y-0">
-                                <div className="text-sm leading-5 text-gray-500 flex-no-wrap">Entry Price: <span className="ml-4 text-gray-900">{trade.entryPrice}</span> </div>
-                                <div className="text-sm leading-5 text-gray-500"><span className="text-gray-900">{trade.noOfCoins}</span> Units</div>
+                            <div className="pt-5 w-xl md:mt-0 flex flex-row flex-wrap items-cente">
+                                <div className="text-sm leading-5 text-gray-500 flex-no-wrap mr-5">Entry Price: <span className="ml-4 text-gray-900">{trade.entryPrice}</span> </div>
+                                <div className="text-sm leading-5 text-gray-500 mr-5"><span className="text-gray-900">{trade.noOfCoins}</span> Units</div>
                                 <div className={`text-xs leading-5 font-semibold text-${tradeStatus}-800`}>
                                     <span className={`px-2 py-1 bg-${tradeStatus}-100 rounded-lg`}>{tradeStatusText}</span> 
                                 </div>
                             </div>
                             
-                        {/* </div> */}
+                        </div>
 
                         </div>
                     </div>
