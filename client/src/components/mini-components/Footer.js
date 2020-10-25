@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="md:flex justify-between items-center text-sm">
               <div className="text-center md:text-left py-3 md:py-4 border-b md:border-b-0">
                 <a href="/" className="no-underline text-grey-dark mr-4">Home</a>
-                <a href="/" className="no-underline text-grey-dark mr-4">Careers</a>
+                <a href="/pricing" className="no-underline text-grey-dark mr-4">Get Started</a>
                 <a href="/" className="no-underline text-grey-dark">Legal &amp; Privacy</a>
               </div>
               <div className="md:flex md:flex-row-reverse items-center py-4">

@@ -5,7 +5,7 @@ const PricePlan = ({ eachPrice }) => {
     return (
         <div className="p-4 xl:w-1/3 md:w-1/2 w-full">
             <div className="h-full p-6 rounded-lg border-2 border-gray-300 hover:border-blue-700 flex flex-col relative overflow-hidden">
-                {eachPrice.state === null ? "" :
+                {eachPrice.state &&
                     <span className="bg-blue-700 text-white px-3 py-2 tracking-widest text-xs absolute right-0 top-0 rounded mt-1 mr-1">
                         {eachPrice.state}
                     </span>
