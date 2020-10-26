@@ -6,7 +6,9 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/go-playground/validator v9.31.0+incompatible
 	github.com/go-playground/validator/v10 v10.3.0
+	github.com/gofiber/cors v0.2.2
 	github.com/gofiber/fiber v1.14.5
+	github.com/gofiber/fiber/v2 v2.1.1
 	github.com/gofiber/jwt v0.2.0
 	github.com/jackc/pgproto3/v2 v2.0.4 // indirect
 	github.com/jinzhu/gorm v1.9.16
