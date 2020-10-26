@@ -7,9 +7,9 @@ import logo from "../assets/images/logo.svg"
 const Login = () => {
     let history = useHistory()
 
-    const [Email, setEmail] = useState("")
-    const [Password, setPassword] = useState("")
-    const [Name, setname] = useState("Popo Lee")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [name, setname] = useState("Popo Lee")
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -23,7 +23,6 @@ const Login = () => {
 
    
     const userLogin = async () => {
-        // console.log({ name, email, password })
         // await axios.post(
         //     '/login', 
         //     { email, password }, 
@@ -37,7 +36,7 @@ const Login = () => {
         //     .catch(error => console.log(error))
             try {
                 const response = await axios.post('/register',
-                { Name, Email, Password }, 
+                { name, email, password }, 
                 { headers: { "Content-Type": "application/json" }}
                 );
                 console.log(response);
@@ -65,14 +64,14 @@ const Login = () => {
                     <div className="rounded-md shadow-sm">
                         <input aria-label="Email address" 
                                 name="email" type="email" required 
-                                value={Email}
+                                value={email}
                                 onChange={e => setEmail(e.target.value)}
                                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" 
                                 placeholder="Email address" 
                             />
                             <input aria-label="Password" 
                                 name="password" type="password" required 
-                                value={Password}
+                                value={password}
                                 onChange={e => setPassword(e.target.value)}
                                 className="-mt-px appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" 
                                 placeholder="Password" 
