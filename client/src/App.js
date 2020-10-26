@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Switch, Route, Redirect } from "react-router-dom"
 import Login from './pages/Login'
 import Home from './pages/Home'
@@ -10,15 +10,6 @@ import Pricing from './pages/Pricing'
 import axios from './axios/axios'
 
 function App() {
-
-  useEffect(() => {
-    async function fetchData() {
-      await axios.get("https://bunny-task-server.herokuapp.com/api/v1/tasks")
-      .then(res => {return console.log(res)})
-      .catch(err => console.log(err))
-    }
-    fetchData();
-  }, []);
 
 
   return (
