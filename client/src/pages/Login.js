@@ -16,10 +16,10 @@ const Login = () => {
         userLogin()
     }
 
-    // sessionStorage.setItem('token', token);
-    // sessionStorage.setItem('id', response.userId);
-    // let token = sessionStorage.getItem('token');
-    // 'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
+    // sessionStorage.setItem('token', token)
+    // sessionStorage.setItem('id', response.userId)
+    // let token = sessionStorage.getItem('token')
+    // 'content-type': 'application/x-www-form-urlencodedcharset=utf-8'
 
    
     const userLogin = async () => {
@@ -30,7 +30,7 @@ const Login = () => {
         //     )
         //     .then(res => {
         //         console.log(res)
-        //         sessionStorage.setItem('token', res.token);
+        //         sessionStorage.setItem('token', res.token)
         //         history.push('/user')
         //     })
         //     .catch(error => console.log(error))
@@ -38,10 +38,10 @@ const Login = () => {
                 const response = await axios.post('/register',
                 { name, email, password }, 
                 { headers: { "Content-Type": "application/json" }}
-                );
-                console.log(response);
+                )
+                console.log(response)
               } catch (error) {
-                console.error(error);
+                console.error(error)
               }
     }
 

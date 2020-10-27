@@ -7,10 +7,8 @@ import Portfolio from './pages/Portfolio'
 import Portfolios from './pages/Portfolios'
 import Footer from './components/mini-components/Footer'
 import Pricing from './pages/Pricing'
-import axios from './axios/axios'
 
 function App() {
-
 
   return (
     <div className="App font-sans bg-gray-100 min-h-screen">

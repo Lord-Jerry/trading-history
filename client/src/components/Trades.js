@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Trade from './Trade'
 import Pagination from './mini-components/Pagination'
 import Tabs from './Tabs'

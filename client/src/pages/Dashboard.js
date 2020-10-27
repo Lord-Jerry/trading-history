@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Main from './wrapper/Main'
 import PortfolioStat from '../components/PortfolioStat'
 import TopHoldings from '../components/TopHoldings'

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Main from './wrapper/Main'
 import PortfolioRow from '../components/PortfolioRow'
 import Pagination from '../components/mini-components/Pagination'
-import Tabs from '../components/Tabs'
 import CreatePortfolio from "../components/modals/forms/CreatePortfolio"
 
 const Portfolios = () => {
