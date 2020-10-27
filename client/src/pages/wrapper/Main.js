@@ -7,7 +7,7 @@ const Main = ({children}) => {
     return (
         <>
             <AuthNavbar />
-            <div className="container my-1 mx-auto flex flex-row sm:space-x-0 md:space-x-10 px-4">
+            <div className="container my-1 mx-auto flex flex-row space-x-0 lg:space-x-10 px-4">
                 <Sidebar />
                 {children}
             </div>
