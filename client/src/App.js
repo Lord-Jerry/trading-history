@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard'
 import Portfolio from './pages/Portfolio'
 import Portfolios from './pages/Portfolios'
 import Footer from './components/mini-components/Footer'
+import SignUp from './pages/SignUp'
 import Pricing from './pages/Pricing'
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Route exact path="/pricing" component={Pricing} />
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={Login} />
-        <PrivateRoute path="/dash" >
+        <Route exact path="/signup" component={SignUp} />
+        <PrivateRoute path="/dash">
           <Dashboard />
         </PrivateRoute>
         <PrivateRoute path="/port-1">

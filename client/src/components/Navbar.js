@@ -18,7 +18,7 @@ const Navbar = ({ isLogin }) => {
                               <path fill="currentColor" d="M5.007 11.969c-.793 0-1.567.236-2.226.678a4.021 4.021 0 00-1.476 1.807 4.042 4.042 0 00.869 4.386 4.001 4.001 0 004.366.873 4.011 4.011 0 001.798-1.483 4.038 4.038 0 00-.5-5.08 4.004 4.004 0 00-2.831-1.181z"/>
                           </svg>
                       </div>
-                      <div className=" text-indigo-700 hover:text-gray-900 text-3xl font-bold ml-3 md:ml-5">Tradelog</div>
+                      <div className=" text-indigo-700 hover:text-gray-900 text-3xl font-bold ml-3 md:ml-5">tradelog</div>
                   </Link>
                 </div>
                 

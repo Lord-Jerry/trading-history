@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PageWrapper from './wrapper/PageWrapper'
+import AuthWrapper from './wrapper/AuthWrapper'
 import axios from "../axios/axios"
 import { useHistory, Link } from "react-router-dom"
-import logo from "../assets/images/logo.svg"
 
 const Login = () => {
     let history = useHistory()
@@ -47,18 +47,7 @@ const Login = () => {
 
     return (
         <PageWrapper>
-            <div className="max-w-md lg:w-2/6 mx-auto px-10 py-16 bg-white rounded-lg border-gray-600 shadow-2xl">
-                <div>
-                    <img className="mx-auto h-12 w-auto" src={logo} alt="Workflow" />
-                    <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
-                        Sign in now
-                        </h2>
-                    <p className="mt-2 text-center text-sm leading-5 text-gray-600">
-                        <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
-                            Sign Up instead
-                            </a>
-                    </p>
-                </div>
+            <AuthWrapper link="signup"  title="Sign in now" linkText="SignUp instead">
                 <form onSubmit={handleSubmit} className="mt-8" action="#" method="POST">
                     <input type="hidden" name="remember" value="true" />
                     <div className="rounded-md shadow-sm">
@@ -104,7 +93,7 @@ const Login = () => {
                             </button>
                     </div>
                 </form>
-            </div>
+            </AuthWrapper>
         </PageWrapper>
     )
 }

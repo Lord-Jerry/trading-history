@@ -26,8 +26,6 @@ const Portfolios = () => {
                     </span>
                     <hr></hr>
                     {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
-                    {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
-                    {portfoliosObject.map(portfolio => <PortfolioRow key={portfolio.tradeId} {...portfolio} />)}
                     <Pagination ></Pagination>
                 </div>
             </div>
@@ -42,6 +40,18 @@ const portfoliosObject = [
         name: "Defi Coins", portId: "498625E", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
     },
     {
-        name: "Defi Coins", portId: "498625F", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
+        name: "Crypto Dap", portId: "498625F", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
+    },
+    {
+        name: "Defi Coins", portId: "498625G", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
+    },
+    {
+        name: "Defi Coins", portId: "498625H", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
+    },
+    {
+        name: "Defi Coins", portId: "498625I", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
+    },
+    {
+        name: "Defi Coins", portId: "498625J", amountInv: "350 USDT", noOfTrades: "34", growth: "10.2%", createDate: "14/10/2020",
     },
 ]
