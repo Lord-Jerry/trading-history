@@ -19010,10 +19010,6 @@ video {
   animation: bounce 1s infinite;
 }
 
-.red-red {
-  color: rgb(30, 161, 236);
-}
-
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
