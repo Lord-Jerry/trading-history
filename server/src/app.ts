@@ -1,13 +1,25 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
-const app = express()
+import express from 'express';
+import config from './config';
+import logger from './loaders/logger';
+import loaders from './loaders';
 
-app.use(cors());
+async function startServer() {
+    const app = express();
 
-app.get("/", (req: Request, res: Response) => {
-  res.status(200).send("Hello World!");
-})
+    loaders({ expressApp: app });
 
-app.listen(8000,()=>{
-  console.log('Server Started at Port, 8000')
-})
+    app
+        .listen(config.port, () => {
+            logger.info(`
+        ################################################
+        🛡️  Server listening on port: ${config.port} 🛡️
+        ################################################
+      `);
+        })
+        .on('error', (err) => {
+            logger.error(err);
+            process.exit(1);
+        });
+}
+
+startServer();
