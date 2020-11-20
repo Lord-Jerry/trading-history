@@ -6,6 +6,8 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import { Error } from '../interfaces/Error';
 import routes from './routes';
+import config from '../config';
+import logger from './logger';
 
 export default ({ app }: { app: Application }) => {
     app.enable('trust proxy');
@@ -13,7 +15,7 @@ export default ({ app }: { app: Application }) => {
     app.use(bodyParser.json());
     app.use(morgan('dev'));
 
-    app.use(routes());
+    app.use(config.api.prefix, routes());
 
     // catch 404 errors
     app.use((_req, _res, next) => {
@@ -27,7 +29,9 @@ export default ({ app }: { app: Application }) => {
     // eslint-disable-next-line no-unused-vars
     app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
         const status: number = err.status || 500;
-        const message: string = err.message || 'Internal server error';
+        const message: string = err.status ? err.message : 'Internal server error';
+
+        logger.error(!err.status ? err.stack : err);
         return res.status(status).json({
             message,
             status,

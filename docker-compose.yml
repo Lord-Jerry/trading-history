@@ -5,14 +5,14 @@ services:
     volumes:
       - ./server/:/usr/src/app
     ports:
-      - "3001:3001"
+      - "9090:9090"
     hostname: server
     depends_on:
       - db
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
-      POSTGRES_DB: db
+      POSTGRES_DB: trade-history
   db:
     image: postgres:10
     hostname: db

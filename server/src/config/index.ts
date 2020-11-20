@@ -16,7 +16,11 @@ export default {
     /**
    * That long string from mlab
    */
-    databaseURL: process.env.MONGODB_URI,
+    db: {
+        database: process.env.POSTGRES_DB,
+        user: process.env.POSTGRES_USER,
+        pass: process.env.POSTGRES_PASSWORD,
+    },
 
     /**
    * Your secret sauce
@@ -48,7 +52,7 @@ export default {
    * API configs
    */
     api: {
-        prefix: '/api',
+        prefix: '/api/v1',
     },
     /**
    * Mailgun email credentials
