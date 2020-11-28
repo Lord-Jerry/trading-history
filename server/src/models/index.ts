@@ -1,6 +1,7 @@
 import { Model } from 'objection';
 import knex from 'knex';
-import User from './User';
+import User from './Users';
+import Portfolios from './Portfolios';
 
 import knexConfig from '../../knexfile';
 
@@ -9,4 +10,5 @@ Model.knex(knexInstance);
 
 export {
     User,
+    Portfolios,
 };

@@ -1,4 +1,5 @@
 import { Model } from 'objection';
+import Portfolios from './Portfolios';
 
 export default class Users extends Model {
     id!: number;
@@ -30,6 +31,19 @@ export default class Users extends Model {
                 lname: { type: 'string' },
                 email: { type: 'string' },
                 password: { type: 'string' },
+            },
+        };
+    }
+
+    static get relationMappings() {
+        return {
+            Portfolios: {
+                relation: Model.HasManyRelation,
+                modelClass: Portfolios,
+                join: {
+                    from: `${this.tableName}.id`,
+                    to: 'portfolios.user_id',
+                },
             },
         };
     }
