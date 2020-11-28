@@ -3,6 +3,21 @@ import { Portfolios } from '../models';
 import { Error } from '../interfaces/Error';
 
 export default class PortfolioService {
+    static async checkPortfolioExists(userId: number, portfolioId: number) {
+        const findPortfolio = await Portfolios.query().findOne({
+            id: portfolioId,
+            user_id: userId,
+        });
+        if (!findPortfolio) {
+            const err: Error = new Error();
+            err.message = `portfolio with ID ${portfolioId} not found`;
+            err.status = 404;
+            throw err;
+        }
+
+        return findPortfolio;
+    }
+
     static async createPortfolio(userId: number, body: PortfolioInterface) {
         // TODO: use user service to check if user exists before creating portfolio
         const create = await Portfolios.query().insert({
@@ -22,16 +37,7 @@ export default class PortfolioService {
     }
 
     static async updatePortfolio(userId: number, portfolioId: number, body: PortfolioInterface) {
-        const findPortfolio = await Portfolios.query().findOne({
-            id: portfolioId,
-            user_id: userId,
-        });
-        if (!findPortfolio) {
-            const err: Error = new Error();
-            err.message = `portfolio with ID ${portfolioId} not found`;
-            err.status = 404;
-            throw err;
-        }
+        await this.checkPortfolioExists(userId, portfolioId);
 
         // eslint-disable-next-line no-return-await
         return await Portfolios.query().patchAndFetchById(portfolioId, {
@@ -40,16 +46,7 @@ export default class PortfolioService {
     }
 
     static async deletePortfolio(userId: number, portfolioId: number) {
-        const findPortfolio = await Portfolios.query().findOne({
-            id: portfolioId,
-            user_id: userId,
-        });
-        if (!findPortfolio) {
-            const err: Error = new Error();
-            err.message = `portfolio with ID ${portfolioId} not found`;
-            err.status = 404;
-            throw err;
-        }
+        await this.checkPortfolioExists(userId, portfolioId);
 
         // eslint-disable-next-line no-return-await
         return await Portfolios.query().deleteById(portfolioId);

@@ -9,9 +9,9 @@ export async function up(knex: Knex): Promise<void> {
         // buy or sell
         table.string('direction').notNullable();
         table.float('entry_price').notNullable();
-        table.float('stop_loss').notNullable();
-        table.float('take_profit').notNullable();
-        table.float('exit_price').notNullable();
+        table.float('stop_loss').nullable();
+        table.float('take_profit').nullable();
+        table.float('exit_price').nullable();
 
         // number of coins or postions open
         table.float('positions').notNullable();
