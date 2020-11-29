@@ -1,6 +1,6 @@
 module.exports = {
     future: {
-      removeDeprecatedGapUtilities: true,
+        removeDeprecatedGapUtilities: true,
     },
     // theme: {
     //   colors: {
@@ -13,4 +13,4 @@ module.exports = {
     //   }
     // },
     // ...
-  }
+};
