@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { loginUser } from '../../redux/actions';
-import Login from './Login';
+import { createUser } from '../../redux/actions';
+import SignUp from './Signup';
 
 const mapStateToProps = (state) => ({
     currentUser: state.authReducer.currentUser,
@@ -12,9 +12,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
     bindActionCreators(
         {
-            loginUser,
+            createUser,
         },
         dispatch,
     );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

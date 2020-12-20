@@ -15,10 +15,10 @@ const Modal = ({ children, hideModal }) => (
                 --> */}
             <div className="fixed inset-0 transition-opacity">
                 <div className="absolute inset-0 bg-gray-500 opacity-75" />
-          </div>
+            </div>
             {/* <!-- This element is to trick the browser into centering the modal contents. --> */}
             <span className="hidden sm:inline-block sm:align-middle sm:h-screen" />
-        &#8203;
+            &#8203;
             {/* <!--
                 Modal panel, show/hide based on modal state.
 
@@ -34,11 +34,11 @@ const Modal = ({ children, hideModal }) => (
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="modal-headline"
-          >
+            >
                 {children}
-          </div>
-      </div>
-  </div>
+            </div>
+        </div>
+    </div>
 );
 
 export default Modal;

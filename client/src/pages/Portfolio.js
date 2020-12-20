@@ -13,30 +13,39 @@ const Portfolio = () => {
     return (
         <Main>
             <div className="flex flex-col w-full lg:w-6/8">
-                <h4 className="text-xl title-font font-medium leading-none text-indigo-700 mb-5 uppercase">Portfolio</h4>
+                <h4 className="text-xl title-font font-medium leading-none text-indigo-700 mb-5 uppercase">
+                    Portfolio
+                </h4>
                 <PortfolioStat />
                 <div className="flex justify-between items-center my-4">
-                    <h4 className="text-xl title-font font-medium leading-none text-indigo-700 uppercase">trades</h4>
+                    <h4 className="text-xl title-font font-medium leading-none text-indigo-700 uppercase">
+                        trades
+                    </h4>
                     <div className="flex items-center">
-                    <button
-                          type="button" onClick={() => setHideModal('')}
-                          className="py-2 px-4 rounded text-white bg-blue-500"
+                        <button
+                            type="button"
+                            onClick={() => setHideModal('')}
+                            className="py-2 px-4 rounded text-white bg-blue-500"
                         >
-                          {' '}
-                          New Trade
-{' '}
+                            {' '}
+                            New Trade{' '}
                         </button>
-                    <CreateTrade hideModal={hideModal} setHideModal={setHideModal} />
-                  </div>
-              </div>
+                        <CreateTrade hideModal={hideModal} setHideModal={setHideModal} />
+                    </div>
+                </div>
                 <div className="flex flex-col bg-white w-full h-full rounded-lg shadow borde">
                     <Tabs activeTab={activeTab} handleActiveTab={setactiveTab} />
-                {tradesObject.filter((trade) => (activeTab === 'open' ? trade.exitPrice === '' : trade.exitPrice !== ''))
-                        .map((trade) => <Trade key={trade.tradeId} trade={trade} />)}
+                    {tradesObject
+                        .filter((trade) =>
+                            activeTab === 'open' ? trade.exitPrice === '' : trade.exitPrice !== '',
+                        )
+                        .map((trade) => (
+                            <Trade key={trade.tradeId} trade={trade} />
+                        ))}
                     <Pagination />
-              </div>
-          </div>
-      </Main>
+                </div>
+            </div>
+        </Main>
     );
 };
 

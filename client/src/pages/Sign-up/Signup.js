@@ -1,17 +1,17 @@
 import React from 'react';
-import { Box, Heading, Stack, Button, Link, Flex, Spacer, Divider, Alert } from '@chakra-ui/react';
+import { Box, Heading, Stack, Button, Flex, Divider, Text, Center, Alert } from '@chakra-ui/react';
 import { useFormik, Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import BeInput from '../../components/BeInput';
 
-import { loginFormik } from '../../constants/formik';
+import { signUpFormik } from '../../constants/formik';
 import colours from '../../constants/colours';
 
-const Login = ({ loginUser, authError, loading }) => {
+const SignUp = ({ createUser, authError, loading }) => {
     const formik = useFormik({
-        ...loginFormik,
+        ...signUpFormik,
         onSubmit: async (values) => {
-            await loginUser(values);
+            await createUser(values);
         },
     });
 
@@ -38,15 +38,36 @@ const Login = ({ loginUser, authError, loading }) => {
                             </Alert>
                         )}
                         <Heading textAlign="center" fontSize="24px" fontWeight="400">
-                            Log In
+                            Create an account
                         </Heading>
                         <Divider />
+                        <Flex>
+                            <BeInput
+                                name="fname"
+                                label="First name"
+                                value={formik.values.fname}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                errorMessage={formik.touched.fname && formik.errors.fname}
+                            />
+                            <Divider orientation="vertical" />
+                            <BeInput
+                                name="lname"
+                                label="Last name"
+                                value={formik.values.lname}
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                errorMessage={formik.touched.lname && formik.errors.lname}
+                            />
+                        </Flex>
+
                         <BeInput
                             name="email"
                             type="email"
                             label="Email address"
                             value={formik.values.email}
                             onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                             errorMessage={formik.touched.email && formik.errors.email}
                         />
 
@@ -56,6 +77,7 @@ const Login = ({ loginUser, authError, loading }) => {
                             label="Password"
                             value={formik.values.password}
                             onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
                             errorMessage={formik.touched.password && formik.errors.password}
                         />
 
@@ -67,18 +89,12 @@ const Login = ({ loginUser, authError, loading }) => {
                             isLoading={loading}
                             type="submit"
                         >
-                            Submit
+                            Create Account
                         </Button>
 
-                        <Flex>
-                            <Link fontSize="14px" textAlign="right" justifyContent="right" href="/">
-                                Forgot Password?
-                            </Link>
-                            <Spacer />
-                            <Link fontSize="14px" textAlign="right" justifyContent="right" href="/">
-                                Create an account
-                            </Link>
-                        </Flex>
+                        <Center>
+                            <Text>Already registered? Login</Text>
+                        </Center>
                     </Stack>
                 </Box>
             </Form>
@@ -86,15 +102,15 @@ const Login = ({ loginUser, authError, loading }) => {
     );
 };
 
-Login.propTypes = {
-    loginUser: PropTypes.func.isRequired,
+SignUp.propTypes = {
+    createUser: PropTypes.func.isRequired,
     authError: PropTypes.string,
     loading: PropTypes.bool,
 };
 
-Login.defaultProps = {
+SignUp.defaultProps = {
     authError: '',
     loading: false,
 };
 
-export default Login;
+export default SignUp;

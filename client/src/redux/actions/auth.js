@@ -1,4 +1,4 @@
-import { loginService } from '../../services/auth';
+import { loginService, registerUserService } from '../../services/auth';
 import ActionTypes from '../actionTypes';
 
 export const setLoading = (loadingState) => ({
@@ -17,8 +17,26 @@ export const setAuthError = (error) => ({
 });
 export const loginUser = (body) => async (dispatch) => {
     try {
+        dispatch(setAuthError(''));
         dispatch(setLoading(true));
-        const { data: { user, token }} = await loginService(body);
+        const {
+            data: { user, token },
+        } = await loginService(body);
+        dispatch(setUserData(user, token));
+        dispatch(setLoading(false));
+    } catch (err) {
+        dispatch(setAuthError(err?.response?.data?.message));
+        dispatch(setLoading(false));
+    }
+};
+
+export const createUser = (body) => async (dispatch) => {
+    try {
+        dispatch(setAuthError(''));
+        dispatch(setLoading(true));
+        const {
+            data: { user, token },
+        } = await registerUserService(body);
         dispatch(setUserData(user, token));
         dispatch(setLoading(false));
     } catch (err) {

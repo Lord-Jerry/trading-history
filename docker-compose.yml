@@ -13,6 +13,15 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: trade-history
+  client:
+    build: ./client/
+    volumes:
+      - ./client/:/usr/src/app
+    ports:
+      - "3000:3000"
+    hostname: client
+    depends_on:
+      - server
   db:
     image: postgres:10
     hostname: db

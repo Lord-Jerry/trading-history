@@ -13,17 +13,17 @@ const PortfolioStat = () => (
                         strokeWidth="2"
                         className="w-5 h-5"
                         viewBox="0 0 24 24"
-                  >
+                    >
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-              </span>
+                    </svg>
+                </span>
                 <div className="flex-grow">
                     <h2 className="text-gray-900 title-font font-medium text-3xl">{stat[1]}</h2>
                     <p className="text-gray-500">{stat[0]}</p>
-              </div>
-          </div>
+                </div>
+            </div>
         ))}
-  </div>
+    </div>
 );
 
 export default PortfolioStat;

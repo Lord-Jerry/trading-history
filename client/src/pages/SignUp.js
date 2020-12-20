@@ -25,10 +25,21 @@ const SignUp = ({ setisLogin }) => {
     // let token = sessionStorage.getItem('token');
 
     const userRegister = async () => {
-        await axios.post('https://trading-history.herokuapp.com/api/v1/register', {
-            fullName, email, password,
-        },
-        { headers: { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS' } })
+        await axios
+            .post(
+                'https://trading-history.herokuapp.com/api/v1/register',
+                {
+                    fullName,
+                    email,
+                    password,
+                },
+                {
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                    },
+                },
+            )
             .then((res) => {
                 console.log(res);
                 setisLogin(true);
@@ -43,56 +54,75 @@ const SignUp = ({ setisLogin }) => {
     return (
         <PageWrapper>
             <AuthWrapper link="signin" title="Sign up now" linkText="Sign in instead">
-            <form onSubmit={handleSubmit} className="mt-8" action="#" method="POST">
+                <form onSubmit={handleSubmit} className="mt-8" action="#" method="POST">
                     <input type="hidden" name="remember" value="true" />
                     <div className="rounded-md shadow-sm">
                         <input
-                        aria-label="name"
-                            name="name" type="text" required
+                            aria-label="name"
+                            name="name"
+                            type="text"
+                            required
                             value={fullName}
                             onChange={(e) => setfullName(e.target.value)}
                             className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                             placeholder="Full name"
-                      />
+                        />
                         <input
-                        aria-label="Email address"
-                            name="email" type="email" required
+                            aria-label="Email address"
+                            name="email"
+                            type="email"
+                            required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="-mt-px appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                             placeholder="Email address"
-                      />
+                        />
                         <input
-                        aria-label="Password"
-                            name="password" type="password" required
+                            aria-label="Password"
+                            name="password"
+                            type="password"
+                            required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="-mt-px appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                             placeholder="Password"
-                      />
+                        />
                         <input
-                        aria-label="Password"
-                            name="confirm-password" type="password" required
+                            aria-label="Password"
+                            name="confirm-password"
+                            type="password"
+                            required
                             value={confirmPassword}
                             onChange={(e) => setconfirmPassword(e.target.value)}
                             className="-mt-px appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
                             placeholder="Confirm password"
-                      />
-              </div>
+                        />
+                    </div>
 
                     <div className="mt-6">
-                        <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                        <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                              <svg className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400 transition ease-in-out duration-150" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                        <button
+                            type="submit"
+                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                        >
+                            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <svg
+                                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400 transition ease-in-out duration-150"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                        clipRule="evenodd"
+                                    />
                                 </svg>
                             </span>
-                        Sign Up
+                            Sign Up
                         </button>
-              </div>
+                    </div>
                 </form>
-          </AuthWrapper>
-      </PageWrapper>
+            </AuthWrapper>
+        </PageWrapper>
     );
 };
 
