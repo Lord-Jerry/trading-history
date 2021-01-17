@@ -2,12 +2,12 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+ADD package*.json ./
 
 RUN npm install
 
-COPY . .
+ADD . .
 
 EXPOSE 9090
 
-CMD ["npm", "run", "start:dev"]
+CMD npm run start:dev

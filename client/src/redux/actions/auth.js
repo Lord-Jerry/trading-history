@@ -1,4 +1,5 @@
-import { loginService, registerUserService } from '../../services/auth';
+import { loginService, registerUserService, currentUserService } from '../../services/auth';
+import { setToken } from '../../services/token';
 import ActionTypes from '../actionTypes';
 
 export const setLoading = (loadingState) => ({
@@ -22,6 +23,7 @@ export const loginUser = (body) => async (dispatch) => {
         const {
             data: { user, token },
         } = await loginService(body);
+        setToken(token);
         dispatch(setUserData(user, token));
         dispatch(setLoading(false));
     } catch (err) {
@@ -37,10 +39,21 @@ export const createUser = (body) => async (dispatch) => {
         const {
             data: { user, token },
         } = await registerUserService(body);
+        setToken(token);
         dispatch(setUserData(user, token));
         dispatch(setLoading(false));
     } catch (err) {
         dispatch(setAuthError(err?.response?.data?.message));
         dispatch(setLoading(false));
     }
+};
+
+export const checkUserLoggedIn = () => async (dispatch) => {
+    try {
+        const {
+            data: { user },
+        } = await currentUserService();
+        dispatch(setUserData(user));
+    // eslint-disable-next-line no-empty
+    } catch (err) {}
 };

@@ -7,7 +7,7 @@ import BeInput from '../../components/BeInput';
 import { loginFormik } from '../../constants/formik';
 import colours from '../../constants/colours';
 
-const Login = ({ loginUser, authError, loading }) => {
+const Login = ({ loginUser, authError, loading, history }) => {
     const formik = useFormik({
         ...loginFormik,
         onSubmit: async (values) => {
@@ -71,11 +71,23 @@ const Login = ({ loginUser, authError, loading }) => {
                         </Button>
 
                         <Flex>
-                            <Link fontSize="14px" textAlign="right" justifyContent="right" href="/">
+                            <Link
+                                onClick={() => history.push('/forgot-password')}
+                                fontSize="14px"
+                                textAlign="right"
+                                justifyContent="right"
+                                href="/"
+                            >
                                 Forgot Password?
                             </Link>
                             <Spacer />
-                            <Link fontSize="14px" textAlign="right" justifyContent="right" href="/">
+                            <Link
+                                onClick={() => history.push('/register')}
+                                fontSize="14px"
+                                textAlign="right"
+                                justifyContent="right"
+                                to
+                            >
                                 Create an account
                             </Link>
                         </Flex>
@@ -90,6 +102,7 @@ Login.propTypes = {
     loginUser: PropTypes.func.isRequired,
     authError: PropTypes.string,
     loading: PropTypes.bool,
+    history: PropTypes.object.isRequired,
 };
 
 Login.defaultProps = {

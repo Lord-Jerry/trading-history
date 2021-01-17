@@ -4,6 +4,7 @@ import {
 import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
+import { TokenExpiredError } from 'jsonwebtoken';
 import { Error } from '../interfaces/Error';
 import routes from './routes';
 import config from '../config';
@@ -32,6 +33,13 @@ export default ({ app }: { app: Application }) => {
         const message: string = err.status ? err.message : 'Internal server error';
 
         logger.error(!err.status ? err.stack : err);
+
+        if (err instanceof TokenExpiredError) {
+            return res.status(401).json({
+                message: 'Invalid Token',
+                status: 401,
+            });
+        }
         return res.status(status).json({
             message,
             status,

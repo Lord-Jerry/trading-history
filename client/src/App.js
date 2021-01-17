@@ -1,21 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { Suspense } from 'react';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 import Layout from './Layout';
 import store from './redux/store';
-import history from './history';
-import Routes from './routes';
-
-// import Login from './pages/Login';
-// import Home from './pages/Home';
-// import Dashboard from './pages/Dashboard';
-// import Portfolio from './pages/Portfolio';
-// import Portfolios from './pages/Portfolios';
-// import Footer from './components/mini-components/Footer';
-// import SignUp from './pages/SignUp';
-// import Pricing from './pages/Pricing';
+import routes from './routes';
 
 const colors = {
     brand: {
@@ -30,11 +21,23 @@ const theme = extendTheme({ colors });
 export default function App() {
     return (
         <Provider store={store}>
-            <Router history={history}>
+            <Router>
                 <ChakraProvider theme={theme}>
-                    <Layout history={history}>
+                    <Layout>
                         <Suspense fallback="loading">
-                            <Routes />
+                            <Switch>
+                                {Object.keys(routes).map((value) => {
+                                    const { component: PageComponent } = routes[value];
+                                    return (
+                                        <Route
+                                            key={value}
+                                            exact
+                                            path={value}
+                                            render={(props) => <PageComponent {...props} title />}
+                                        />
+                                    );
+                                })}
+                            </Switch>
                         </Suspense>
                     </Layout>
                 </ChakraProvider>

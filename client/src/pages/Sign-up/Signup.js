@@ -1,5 +1,16 @@
 import React from 'react';
-import { Box, Heading, Stack, Button, Flex, Divider, Text, Center, Alert } from '@chakra-ui/react';
+import {
+    Box,
+    Heading,
+    Stack,
+    Button,
+    Flex,
+    Link,
+    Divider,
+    Text,
+    Center,
+    Alert,
+} from '@chakra-ui/react';
 import { useFormik, Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 import BeInput from '../../components/BeInput';
@@ -7,7 +18,7 @@ import BeInput from '../../components/BeInput';
 import { signUpFormik } from '../../constants/formik';
 import colours from '../../constants/colours';
 
-const SignUp = ({ createUser, authError, loading }) => {
+const SignUp = ({ createUser, authError, loading, history }) => {
     const formik = useFormik({
         ...signUpFormik,
         onSubmit: async (values) => {
@@ -93,7 +104,12 @@ const SignUp = ({ createUser, authError, loading }) => {
                         </Button>
 
                         <Center>
-                            <Text>Already registered? Login</Text>
+                            <Text>
+                                Already registered?{' '}
+                                <Link onClick={() => history.push('/login')} to>
+                                    Login
+                                </Link>
+                            </Text>
                         </Center>
                     </Stack>
                 </Box>
@@ -106,6 +122,7 @@ SignUp.propTypes = {
     createUser: PropTypes.func.isRequired,
     authError: PropTypes.string,
     loading: PropTypes.bool,
+    history: PropTypes.object.isRequired,
 };
 
 SignUp.defaultProps = {

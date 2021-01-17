@@ -6,6 +6,7 @@ import { checkLoggedIn } from '../middlewares/verification';
 import Auth from '../controllers/Auth';
 import Portfolio from '../controllers/portfolio';
 import Trade from '../controllers/Trade';
+import User from '../controllers/User';
 
 export default () => {
     const route = Router();
@@ -16,6 +17,8 @@ export default () => {
 
     route.post('/register', RegisterValidation, Auth.register);
     route.post('/login', LoginValidation, Auth.login);
+
+    route.get('/current-user', checkLoggedIn, User.getCurrentUser);
 
     route.post('/portfolio/create', checkLoggedIn, CreatePortfolioValidation, Portfolio.create);
     route.get('/portfolio/all', checkLoggedIn, Portfolio.getAll);
